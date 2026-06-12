@@ -706,3 +706,59 @@ De-vig method: 3-way markets (match winner, 1H result, correct-score grid) norma
 | JOR vs ARG | Will Argentina have 6 or more shots on target? | derived Kalshi team lambda (SOT) | 0.726 | 0.726 | — | 73 |
 | JOR vs ARG | Will Mousa Al-Taamari score or assist a goal (excluding own goals)? | modeled from Kalshi team lambda | 0.166 | 0.166 | — | 17 |
 | JOR vs ARG | Will Jordan score in the second half? | derived Kalshi team lambda | 0.200 | 0.200 | — | 20 |
+
+---
+
+# Session 2 — 2026-06-12 (afternoon review)
+
+## Step 1: Calibration from settled results (CAN vs BIH, n=10)
+
+Outcomes inferred from Brier scores (brier = (p − outcome)²):
+
+| Question type | Submitted | Outcome | Hit |
+|---|---|---|---|
+| BiH more fouls than Canada | 57 | 1 | ✓ |
+| Canada win | 53 | 0 | ✗ |
+| BiH 5+ corners | 29 | 0 | ✓ |
+| Penalty OR red card | 36 | 0 | ✓ |
+| Halftime tied | 45 | 0 | ✗ |
+| BiH score 2nd half | 39 | 0 | ✓ |
+| Džeko 1+ SOT | 59 | 0 | ✗ |
+| 4+ SOT 2nd half | 59 | 1 | ✓ |
+| 2nd half 2+ goals | 38 | 0 | ✓ |
+| Jonathan David scores | 32 | 0 | ✓ |
+
+Average submitted 44.7 vs hit rate 20% (2/10). Direction: mild overconfidence on mid-range
+"event happens" props (player SOT, match winner). Sample = one match, so only a modest
+shade-down (~3–4 pts) would be justified on 45–65 "yes" props — no new submissions were
+needed this session, so no corrections were applied to fresh picks. (To be revisited once
+more matches settle.)
+
+## Step 2/5: Coverage check
+
+- 69 matches with open markets; 687 open markets total (66×10 + 3×9 — one AUS market in
+  each of AUS vs TUR / USA vs AUS / PAR vs AUS closed since submission).
+- All 687 open markets verified to already carry a prediction (diffed full market dump
+  against the 687 open predictions). **Zero NEW submissions required.**
+
+## Step 1b: Odds-movement review (matches closing within ~40h, checked vs current Kalshi/books)
+
+| Match | Question | Source | Raw implied | De-vigged | Bias adj | Submitted | Action |
+|---|---|---|---|---|---|---|---|
+| USA vs PAR | Julio Enciso 1+ SOT in 2nd half | News: Enciso ruled OUT (thigh/quad, stretchered off Jun 6 friendly) | ~0 (won't play) | — | — | 35 → **4** | UPDATED |
+| USA vs PAR | United States win | Kalshi 50/29/23 → de-vig 49.0 | 0.50 | 0.490 | — | 49 | SKIPPED (Δ0) |
+| USA vs PAR | 3+ total goals | FanDuel O2.5 +130/U −166 → de-vig 41.1 | 0.435 | 0.411 | — | 41 | SKIPPED (Δ0) |
+| USA vs PAR | Balogun 1+ SOT | Lineups: Balogun confirmed projected starter | — | — | — | 66 | SKIPPED |
+| USA vs PAR | other 6 props (offsides, corners, cards, HT tie, PAR 2H goal, USA-first-goal combo) | no liquid market; no news | — | — | — | — | SKIPPED |
+| QAT vs SUI | all 10 props | Kalshi SUI 81 / draw 14 / QAT 7; O2.5 = 57% — consistent with submitted (QAT score ≥1 @ 40, BTTS&3+ @ 39); no SUI-win market held | — | — | — | — | SKIPPED |
+| BRA vs MAR | Brazil win | Prediction markets 59.0/24.5/16.7 (already de-vigged) | 0.590 | 0.589 | — | 58 | SKIPPED (Δ1) |
+| BRA vs MAR | other 9 props | no liquid market; no news | — | — | — | — | SKIPPED |
+| Haiti vs SCO | all 10 props | bet365 SCO −225 / draw +350 / HAI +525 → de-vig 64/21/15; no SCO-win market held; Haiti score ≥1 @ 57 within tolerance | — | — | — | — | SKIPPED |
+| AUS vs TUR | Australia win | bet365 TUR −125 / draw +250 / AUS +350 → de-vig AUS 20.9 | 0.222 | 0.209 | — | 17 | SKIPPED (Δ3.9 < 5) |
+| AUS vs TUR | other 8 props | no liquid market; no news | — | — | — | — | SKIPPED |
+| All other 64 matches (637 markets) | — | submitted ~6–13h ago from de-vigged Kalshi/book prices; injury sweep found no news touching any held player prop (Rodrygo/Ekitike/Simons/Fermín/Karl/Timber have no markets here and were already priced in) | — | — | — | — | SKIPPED |
+
+**Session actions: 1 UPDATED, 686 SKIPPED, 0 NEW. All 687 open markets have a submitted prediction.**
+
+Sources: Kalshi KXWCGAME (USA-PAR, QAT-SUI), SI/MSN Kalshi-Polymarket previews, FanDuel,
+bet365 via Covers/Racing Post, ESPN/Yahoo/SI injury trackers (Enciso ruled out; Balogun starting).
