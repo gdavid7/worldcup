@@ -816,3 +816,58 @@ is justified at n=2 matches.
 **All open markets have a submitted prediction. Goal condition satisfied.**
 
 Sources: Kalshi/bet365 via ESPN, Squawka, Lineups.com, Sports Mole (QAT-SUI previews).
+
+---
+
+# Session 4 — 2026-06-13
+
+## Step 1: Calibration refreshed — now 20 settled (CAN-BIH ×10, USA-PAR ×10)
+
+USA-PAR fully settled since Session 3 (was 7/10). Three newly-decoded outcomes:
+
+| Match | Question | Sub | Brier | Outcome |
+|---|---|---|---|---|
+| USA-PAR | United States win the match | 49 | 0.2601 | YES |
+| USA-PAR | Julio Enciso 1+ SOT (2nd half) | 4 | 0.0016 | NO (injury cut to 4 paid off) |
+| USA-PAR | Paraguay more corners than USA | 31 | 0.0961 | NO |
+
+### Calibration by question type (all 20 settled, avg Brier 0.210)
+
+| Question type | n | Avg sub | Hit rate | Direction → correction |
+|---|---|---|---|---|
+| Halftime tied | 2 | 45 | 0% (0/2) | **Over** — shade HT-tie DOWN ~5pt (repeatable) |
+| Match winner | 2 | 51 | 50% (CAN N, USA Y) | ≈ calibrated; mild fav over-conf, small n |
+| Player 1+ SOT | 3 | 43 | mixed (Balogun Y, Džeko N, Enciso N) | generic 59-default slightly high → trim toward 55 |
+| Goal-over / team-score 2H | 6 | ~40 | 50% (3/6 YES) | mild **under** → shade goal-overs UP ~+3 |
+| Foul/card/corner/offside | 6 | ~47 | well-calibrated | no change |
+| Score-combo (1st goal + 2H) | 1 | 22 | YES | under, n=1 ignore (variance) |
+
+**Read:** stable signals = HT-tied overestimated (0/2) and goal-over markets mildly
+underestimated. Both logged for future submissions. No broad favorite/draw shift justified
+at n=2 matches.
+
+## Step 1b / Step 5: Coverage + movement check
+
+- 68 open matches, **677 open markets, all 677 carry a prediction** (full predictions dump
+  diffed against the live market list — zero gaps; 677 = 65×10 + 3×9).
+- **0 NEW** required (nothing unpredicted), **0 UPDATED** (no live line moved >5pp).
+- Re-checked the four matches closest to kickoff against current Kalshi/book lines:
+
+| Match | Question | Source | Raw implied | De-vigged | Bias adj | Submitted | Action |
+|---|---|---|---|---|---|---|---|
+| QAT vs SUI | (props only; no win mkt) | Kalshi: SUI 81 / draw 14 / QAT 7 | — | SUI .794 / draw .137 / QAT .069 | — | held | SKIPPED |
+| QAT vs SUI | Qatar score ≥1 goal | held vs SUI-dominant low-scoring | — | — | — | 40 | SKIPPED |
+| BRA vs MAR | Brazil win the match | bet365 −175 / BetOnline −145 (3-way devig) | .636/.592 | ~.59 | — | 58 | SKIPPED (~1pp) |
+| BRA vs MAR | BTTS & 3+ goals | book under-2.5 lean (−123) | — | ~.40 | — | 43 | SKIPPED |
+| Haiti vs SCO | (props only; no win mkt) | Kalshi: SCO 62 / draw 22 / HAI 17 | — | SCO .614/draw .218/HAI .168 | — | held | SKIPPED |
+| Haiti vs SCO | Haiti score ≥1 goal | Kalshi team-total (orig) | — | — | — | 57 | SKIPPED |
+| AUS vs TUR | Australia win the match | TUR 4/6 (.60), AUS +450 (.182), 3-way devig | .182 | ~.175 | — | 17 | SKIPPED (<1pp) |
+
+No roster news touching held player props (Afif/Xhaka, McTominay/Nazon, Yıldız/McGree all
+expected to start; no fresh injuries). All four imminent matches confirmed within the 5pp
+threshold → no updates.
+
+**Session actions: 0 NEW, 0 UPDATED, all 677 open markets carry a prediction. Goal condition satisfied.**
+
+Sources: Kalshi KXWCGAME (QAT-SUI, Haiti-SCO), bet365 / BetOnline / ESPN / Covers / Racing
+Post / Squawka previews (BRA-MAR, AUS-TUR), Yahoo/FOX injury & lineup trackers.
