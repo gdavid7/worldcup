@@ -871,3 +871,155 @@ threshold → no updates.
 
 Sources: Kalshi KXWCGAME (QAT-SUI, Haiti-SCO), bet365 / BetOnline / ESPN / Covers / Racing
 Post / Squawka previews (BRA-MAR, AUS-TUR), Yahoo/FOX injury & lineup trackers.
+
+---
+
+# Session 5 — 2026-06-13 (bias calibration from first 30 settled results)
+
+## Step 1 — Bias analysis (30 settled predictions, mean Brier 0.2415)
+
+Outcomes back-solved from each Brier score (brier = (p−outcome)²).
+
+| Question type | n | Avg submitted | Hit rate | Error direction | Action |
+|---|---|---|---|---|---|
+| Player "1+ shot on target" (my modeled props) | 5 | 59% | 20% (1/5) | **Overconfident** | shade DOWN −5pp |
+| Team SOT count/threshold (derived) | 4 | 48% | 100% (4/4) | **Underconfident** | shade UP +5pp |
+| Team to score (2H / 1+ goal) | 3 | 40% | 67% | mild under | none (market-anchored) |
+| Halftime tied (Kalshi 3-way) | 2 | 45% | 0% | mild over | none (market-anchored, n=2) |
+| Fouls "more than" (favorite model) | 2 | 63% | 100% | well-calibrated | none |
+| Corner thresholds | 2 | 30% | 0% | well-calibrated | none |
+| Match winner (Kalshi de-vig) | 2 | 51% | 50% | neutral | none |
+| Offside 2+ / cards | 2 ea | ~60% | split | neutral | none |
+| Penalty/red, BTTS&3+, anytime goalscorer | 1 ea | ~36% | 0% | well-calibrated | none |
+
+Rationale: the two shot-on-target buckets are the only consistent, mechanistically-coherent signal — my SOT model was internally inconsistent (too generous to named individuals, too stingy on team aggregates). These are MY modeled outputs, not Kalshi prices, so correcting them does not override market data. Correction capped at ±5pp (player floor 10, team ceiling 92) given the small sample (n=4–5). Everything else stayed market-anchored.
+
+## Step 1b — Open-prediction line-move review
+Coverage check: 657/657 open markets already have predictions (zero gaps; nothing NEW to submit).
+Imminent matches checked vs current books (June 14 kickoffs):
+- Haiti vs SCO: market Scotland ~62%, Haiti-to-score ~57% — matches submission (Haiti score 1+ = 57). No >5pp move → SKIPPED.
+- AUS vs TUR: de-vigged Australia win ≈18% vs submitted 17. No move → SKIPPED.
+
+## Step 5/6 — Updates applied this session (117 total)
+
+| Match | Question | Bucket | Old | New | Action |
+|---|---|---|---|---|---|
+| ALG | vs | PLAYER | 55 | 50 | UPDATED |
+| NED | vs | PLAYER | 44 | 39 | UPDATED |
+| ECU | vs | PLAYER | 39 | 34 | UPDATED |
+| NED | vs | PLAYER | 67 | 62 | UPDATED |
+| Curacao | vs | PLAYER | 45 | 40 | UPDATED |
+| UZB | vs | PLAYER | 56 | 51 | UPDATED |
+| SWE | vs | PLAYER | 30 | 25 | UPDATED |
+| CRO | vs | PLAYER | 63 | 58 | UPDATED |
+| New | Zealand | PLAYER | 55 | 50 | UPDATED |
+| GHA | vs | PLAYER | 67 | 62 | UPDATED |
+| USA | vs | PLAYER | 72 | 67 | UPDATED |
+| SUI | vs | PLAYER | 25 | 20 | UPDATED |
+| GHA | vs | PLAYER | 55 | 50 | UPDATED |
+| PAN | vs | PLAYER | 50 | 45 | UPDATED |
+| JOR | vs | PLAYER | 45 | 40 | UPDATED |
+| ECU | vs | PLAYER | 45 | 40 | UPDATED |
+| CZE | vs | PLAYER | 63 | 58 | UPDATED |
+| BEL | vs | PLAYER | 50 | 45 | UPDATED |
+| Haiti | vs | PLAYER | 59 | 54 | UPDATED |
+| BIH | vs | PLAYER | 64 | 59 | UPDATED |
+| CAN | vs | PLAYER | 59 | 54 | UPDATED |
+| Curacao | vs | PLAYER | 30 | 25 | UPDATED |
+| New | Zealand | PLAYER | 50 | 45 | UPDATED |
+| CIV | vs | PLAYER | 30 | 25 | UPDATED |
+| PAN | vs | PLAYER | 80 | 75 | UPDATED |
+| URU | vs | PLAYER | 36 | 31 | UPDATED |
+| RSA | vs | PLAYER | 55 | 50 | UPDATED |
+| AUT | vs | PLAYER | 59 | 54 | UPDATED |
+| TUR | vs | PLAYER | 50 | 45 | UPDATED |
+| JOR | vs | PLAYER | 59 | 54 | UPDATED |
+| NED | vs | PLAYER | 66 | 61 | UPDATED |
+| AUS | vs | PLAYER | 31 | 26 | UPDATED |
+| RSA | vs | PLAYER | 64 | 59 | UPDATED |
+| ENG | vs | PLAYER | 50 | 45 | UPDATED |
+| MAR | vs | PLAYER | 59 | 54 | UPDATED |
+| SEN | vs | PLAYER | 57 | 52 | UPDATED |
+| TUR | vs | PLAYER | 55 | 50 | UPDATED |
+| PAR | vs | PLAYER | 55 | 50 | UPDATED |
+| EGY | vs | PLAYER | 63 | 58 | UPDATED |
+| PAN | vs | PLAYER | 55 | 50 | UPDATED |
+| URU | vs | PLAYER | 63 | 58 | UPDATED |
+| GER | vs | PLAYER | 45 | 40 | UPDATED |
+| SCO | vs | PLAYER | 55 | 50 | UPDATED |
+| Haiti | vs | PLAYER | 74 | 69 | UPDATED |
+| ESP | vs | PLAYER | 55 | 50 | UPDATED |
+| PAN | vs | PLAYER | 55 | 50 | UPDATED |
+| EGY | vs | PLAYER | 55 | 50 | UPDATED |
+| SUI | vs | PLAYER | 59 | 54 | UPDATED |
+| SCO | vs | PLAYER | 55 | 50 | UPDATED |
+| ARG | vs | PLAYER | 55 | 50 | UPDATED |
+| CRO | vs | PLAYER | 31 | 26 | UPDATED |
+| TUN | vs | PLAYER | 30 | 25 | UPDATED |
+| FRA | vs | PLAYER | 59 | 54 | UPDATED |
+| TUN | vs | PLAYER | 30 | 25 | UPDATED |
+| BEL | vs | PLAYER | 50 | 45 | UPDATED |
+| AUT | vs | PLAYER | 59 | 54 | UPDATED |
+| COL | vs | PLAYER | 59 | 54 | UPDATED |
+| TUN | vs | PLAYER | 59 | 54 | UPDATED |
+| SUI | vs | PLAYER | 42 | 37 | UPDATED |
+| POR | vs | PLAYER | 38 | 33 | UPDATED |
+| COD | vs | PLAYER | 42 | 37 | UPDATED |
+| BRA | vs | PLAYER | 59 | 54 | UPDATED |
+| ENG | vs | PLAYER | 56 | 51 | UPDATED |
+| COL | vs | PLAYER | 59 | 54 | UPDATED |
+| SUI | vs | PLAYER | 59 | 54 | UPDATED |
+| ENG | vs | PLAYER | 63 | 58 | UPDATED |
+| MEX | vs | PLAYER | 55 | 50 | UPDATED |
+| IRN | vs | PLAYER | 48 | 43 | UPDATED |
+| CZE | vs | PLAYER | 72 | 67 | UPDATED |
+| CAN | vs | PLAYER | 57 | 52 | UPDATED |
+| POR | vs | PLAYER | 59 | 54 | UPDATED |
+| ARG | vs | PLAYER | 55 | 50 | UPDATED |
+| SUI | vs | TEAM | 64 | 69 | UPDATED |
+| IRN | vs | TEAM | 62 | 67 | UPDATED |
+| ENG | vs | TEAM | 61 | 66 | UPDATED |
+| CPV | vs | TEAM | 52 | 57 | UPDATED |
+| New | Zealand | TEAM | 42 | 47 | UPDATED |
+| URU | vs | TEAM | 69 | 74 | UPDATED |
+| KSA | vs | TEAM | 67 | 72 | UPDATED |
+| ENG | vs | TEAM | 70 | 75 | UPDATED |
+| CRO | vs | TEAM | 16 | 21 | UPDATED |
+| URU | vs | TEAM | 38 | 43 | UPDATED |
+| PAN | vs | TEAM | 45 | 50 | UPDATED |
+| COD | vs | TEAM | 82 | 87 | UPDATED |
+| IRQ | vs | TEAM | 30 | 35 | UPDATED |
+| FRA | vs | TEAM | 24 | 29 | UPDATED |
+| EGY | vs | TEAM | 77 | 82 | UPDATED |
+| GER | vs | TEAM | 21 | 26 | UPDATED |
+| New | Zealand | TEAM | 71 | 76 | UPDATED |
+| ECU | vs | TEAM | 76 | 81 | UPDATED |
+| GER | vs | TEAM | 71 | 76 | UPDATED |
+| ARG | vs | TEAM | 42 | 47 | UPDATED |
+| New | Zealand | TEAM | 20 | 25 | UPDATED |
+| CAN | vs | TEAM | 75 | 80 | UPDATED |
+| ALG | vs | TEAM | 22 | 27 | UPDATED |
+| AUT | vs | TEAM | 72 | 77 | UPDATED |
+| ENG | vs | TEAM | 67 | 72 | UPDATED |
+| FRA | vs | TEAM | 25 | 30 | UPDATED |
+| BRA | vs | TEAM | 25 | 30 | UPDATED |
+| TUN | vs | TEAM | 78 | 83 | UPDATED |
+| COL | vs | TEAM | 33 | 38 | UPDATED |
+| ARG | vs | TEAM | 32 | 37 | UPDATED |
+| NED | vs | TEAM | 78 | 83 | UPDATED |
+| POR | vs | TEAM | 22 | 27 | UPDATED |
+| JOR | vs | TEAM | 73 | 78 | UPDATED |
+| POR | vs | TEAM | 25 | 30 | UPDATED |
+| ALG | vs | TEAM | 36 | 41 | UPDATED |
+| URU | vs | TEAM | 59 | 64 | UPDATED |
+| ECU | vs | TEAM | 52 | 57 | UPDATED |
+| NED | vs | TEAM | 73 | 78 | UPDATED |
+| COL | vs | TEAM | 19 | 24 | UPDATED |
+| NOR | vs | TEAM | 34 | 39 | UPDATED |
+| RSA | vs | TEAM | 45 | 50 | UPDATED |
+| GHA | vs | TEAM | 79 | 84 | UPDATED |
+| FRA | vs | TEAM | 13 | 18 | UPDATED |
+| SCO | vs | TEAM | 52 | 57 | UPDATED |
+| BRA | vs | TEAM | 55 | 60 | UPDATED |
+
+All other open predictions (540 markets): SKIPPED — already submitted, market-anchored, no >5pp move and outside the two bias-corrected buckets.
