@@ -762,3 +762,57 @@ more matches settle.)
 
 Sources: Kalshi KXWCGAME (USA-PAR, QAT-SUI), SI/MSN Kalshi-Polymarket previews, FanDuel,
 bet365 via Covers/Racing Post, ESPN/Yahoo/SI injury trackers (Enciso ruled out; Balogun starting).
+
+---
+
+# Session 3 — 2026-06-12 (evening, post USA-PAR settlement)
+
+## Step 1: Refreshed calibration — now 17 settled (CAN-BIH ×10, USA-PAR ×7)
+
+USA vs PAR settled and dropped off the open board (10 markets → settled). Outcomes
+decoded from Brier scores:
+
+| Match | Question | Sub | Outcome |
+|---|---|---|---|
+| USA-PAR | Paraguay score in 2nd half | 41 | YES |
+| USA-PAR | USA caught offside 2+ | 54 | YES |
+| USA-PAR | Halftime tied | 45 | NO |
+| USA-PAR | 4+ total cards | 54 | YES |
+| USA-PAR | Balogun 1+ SOT | 66 | YES |
+| USA-PAR | 3+ total goals | 41 | YES |
+| USA-PAR | USA 1st goal AND PAR 2H score | 22 | YES |
+
+(Note: the Enciso "1+ SOT 2nd half" prop I cut to 4 after his injury did not appear in
+settled results — voided/removed, no Brier impact.)
+
+### Calibration by question type (all 17 settled)
+
+| Question type | n | Avg sub | Hit rate | Direction of error |
+|---|---|---|---|---|
+| Halftime tied | 2 | 45 | 0% (0/2) | **Over** — shade HT-tie DOWN ~5pt |
+| Match winner (favorite) | 1 | 53 | 0% | Over (Canada lost) — small n |
+| Player 1+ SOT | 2 | 63 | 50% (Balogun Y, Džeko N) | Mixed / unbiased |
+| Total goals & 2H-goal overs | 4 | 40 | 50% (2/4) | Mixed — high variance |
+| Foul/card/corner/offside props | 5 | 47 | 60% (3/5) | ≈ Calibrated |
+| Score-combo (1st goal + 2H) | 1 | 22 | 100% | Under — small n |
+
+**Read:** the two settled matches were opposite archetypes — CAN-BIH dull/low-event
+(2/10 "yes"), USA-PAR wild/high-event (6/7 "yes"). That's match-level variance, not a
+stable directional bias. The **one repeatable signal is halftime-tied: 0/2, overestimated**
+— worth shading down ~5pt on future HT-tie submissions. No broad favorite/draw correction
+is justified at n=2 matches.
+
+## Step 1b / Step 5: Coverage + movement check
+
+- 68 open matches, **677 open markets, all 677 carry a prediction** (full dump diffed
+  against fresh predictions — zero gaps).
+- Most imminent: QAT vs SUI (closes 2026-06-13 21:30Z). Re-checked: bet365 SUI −334,
+  SUI heavy favorite — consistent with held props (QAT score ≥1 @ 40, BTTS&3+ @ 39).
+  No line move >5pp; no roster news affecting held markets (Afif/Xhaka/Embolo all expected
+  to start). BRA-MAR, Haiti-SCO, AUS-TUR re-confirmed unchanged from Session 2.
+- **0 NEW, 0 UPDATED this session.** No corrections applied because no new markets were
+  submitted; HT-tie shade-down logged for future submissions.
+
+**All open markets have a submitted prediction. Goal condition satisfied.**
+
+Sources: Kalshi/bet365 via ESPN, Squawka, Lineups.com, Sports Mole (QAT-SUI previews).
