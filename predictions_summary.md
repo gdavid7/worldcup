@@ -1023,3 +1023,55 @@ Imminent matches checked vs current books (June 14 kickoffs):
 | BRA | vs | TEAM | 55 | 60 | UPDATED |
 
 All other open predictions (540 markets): SKIPPED — already submitted, market-anchored, no >5pp move and outside the two bias-corrected buckets.
+
+---
+
+# Session 6 — 2026-06-13 (offside bias correction from 40 settled results)
+
+## Step 1 — Bias analysis refreshed (now 40 settled, +10 from BRA-MAR since Session 5)
+
+Outcomes back-solved from each Brier score (brier = (p−outcome)²). The new BRA-MAR
+block added one clean, actionable signal that Session 5 (n=30) lacked the sample to act on:
+
+| Question type | n settled | Avg submitted | Hit rate | Direction | Action this session |
+|---|---|---|---|---|---|
+| **Caught offside 2+ times** | 3 | ~59% | 33% (USA 54✓, BRA 58✗, SUI 66✗) | **Overestimated at the high end** | shade DOWN values ≥55 |
+| Player "1+ SOT" | 5 | ~59% | ~25% | over (already corrected S5) | none (S5 −5pp stands) |
+| Team SOT count/threshold | 4 | ~48% | 100% | under (already corrected S5) | none (S5 +5pp stands) |
+| Halftime tied | 3 | ~44% | 33% | regressed to calibrated (was 0/2, now 1/3 after BRA-MAR HT tie) | none |
+| Match winner (favorite, Kalshi) | 3 | ~53% | 33% | mild over, but market-anchored | none (don't override Kalshi) |
+| Fouls / cards "more than" | mixed | mixed | ~50-67% | calibrated | none |
+
+Rationale for offside-only action: the miss is **concentrated in high submissions** — the one
+value at 54 (USA) HIT, while 58 and 66 both missed. So I shade DOWN only predictions ≥55
+(−8pp for ≥60, −6pp for 55–59) and leave ≤54 untouched (the 54 datapoint validated that band).
+Offside props are MY base-rate+tilt model, not Kalshi prices, so correcting them does not override market data. True per-team base rate P(offside 2+) ≈ 0.50 (Poisson, mean ~1.7), so pulling the inflated highs toward ~50–60 is also independently coherent.
+
+## Step 1b — Open-prediction line-move review (imminent matches)
+Coverage check: **657/657 open markets carry a prediction** (computed: 63 matches×10 + 3 matches×9 [AUS-TUR, USA-AUS, PAR-AUS] = 657; my open predictions = 697 total − 40 settled = 657). Zero gaps; nothing NEW to submit.
+- **Haiti vs SCO** (6/14 01:00Z): current books Scotland ~61% de-vig, draw ~20%, Haiti ~19%; Haiti-to-score ~57%, O/U 2.5 (slight over lean). Matches submissions (Haiti score 1+ = 57, tied-at-HT = 41). No >5pp move → SKIPPED.
+- **AUS vs TUR** (6/14 04:00Z): Türkiye favored (~-145), Australia +420 → de-vig Australia win ≈18% vs submitted 17. No move → SKIPPED.
+
+## Step 5/6 — Updates applied this session (17 total, all "offside 2+ times")
+
+| Match (team) | Question | Bucket | Old | New | Action |
+|---|---|---|---|---|---|
+| GER vs Curacao | Will Germany be caught offside 2+? | OFFSIDE | 81 | 73 | UPDATED |
+| ESP vs CPV | Will Spain be caught offside 2+? | OFFSIDE | 71 | 63 | UPDATED |
+| POR vs COD | Will Portugal be caught offside 2+? | OFFSIDE | 68 | 60 | UPDATED |
+| IRQ vs NOR | Will Norway be caught offside 2+? | OFFSIDE | 68 | 60 | UPDATED |
+| GER vs CIV | Will Germany be caught offside 2+? | OFFSIDE | 62 | 54 | UPDATED |
+| KSA vs URU | Will Uruguay be caught offside 2+? | OFFSIDE | 61 | 53 | UPDATED |
+| ARG vs ALG | Will Argentina be caught offside 2+? | OFFSIDE | 61 | 53 | UPDATED |
+| FRA vs SEN | Will France be caught offside 2+? | OFFSIDE | 60 | 52 | UPDATED |
+| ARG vs ALG | Will Algeria be caught offside 2+? | OFFSIDE | 58 | 52 | UPDATED |
+| BEL vs EGY | Will Belgium be caught offside 2+? | OFFSIDE | 58 | 52 | UPDATED |
+| NED vs JPN | Will Netherlands be caught offside 2+? | OFFSIDE | 57 | 51 | UPDATED |
+| SUI vs BIH | Will Switzerland be caught offside 2+? | OFFSIDE | 57 | 51 | UPDATED |
+| CZE vs RSA | Will Czechia be caught offside 2+? | OFFSIDE | 57 | 51 | UPDATED |
+| NED vs SWE | Will Netherlands be caught offside 2+? | OFFSIDE | 57 | 51 | UPDATED |
+| AUS vs TUR | Will Türkiye be caught offside 2+? | OFFSIDE | 55 | 49 | UPDATED |
+| MEX vs KOR | Will Mexico be caught offside 2+? | OFFSIDE | 55 | 49 | UPDATED |
+| NED vs JPN | Will Japan be caught offside 2+? | OFFSIDE | 55 | 49 | UPDATED |
+
+**Session actions: 0 NEW, 17 UPDATED, 640 SKIPPED. All 657 open markets carry a prediction; goal condition satisfied.** Offside predictions ≤54 (39 markets) left unchanged — already at/below base rate and consistent with the USA 54✓ datapoint.
