@@ -1075,3 +1075,44 @@ Coverage check: **657/657 open markets carry a prediction** (computed: 63 matche
 | NED vs JPN | Will Japan be caught offside 2+? | OFFSIDE | 55 | 49 | UPDATED |
 
 **Session actions: 0 NEW, 17 UPDATED, 640 SKIPPED. All 657 open markets carry a prediction; goal condition satisfied.** Offside predictions ≤54 (39 markets) left unchanged — already at/below base rate and consistent with the USA 54✓ datapoint.
+
+---
+
+# Session 7 — 2026-06-14 (coverage verify + bias recheck + offside trims)
+
+**Bias analysis (75 settled results, inferred outcomes from Brier).** Key calibration findings by question type:
+
+| Question type | n | avg submitted | hit rate | direction of error |
+|---|---|---|---|---|
+| Match winner | 5 | 54 | 60% | ~ok; 2 favorites lost (BRA, CAN), 1 underdog won (AUS) — mild favorite overconfidence |
+| Caught offside 2+ | 6 | 55 | 17% | **strongly overestimated** (worst: GER 73→NO, Brier 0.53) |
+| Player 1+ SOT | 10 | ~49 | 20% | overestimated (generic ~59 anchors miss) |
+| More fouls than | 6 | 63 | 67% | ~calibrated |
+| Cards (more/over) | 6 | ~53 | 50% | noisy, ~ok |
+| BTTS & 3+ goals | 4 | 43 | 25% | mild overestimate |
+| Totals (goals O/U) | ~7 | — | — | ~calibrated |
+| Tied at HT | 5 | 43 | 40% | ~calibrated |
+
+**Coverage (Step 2/3/5):** Joined lobby already true. Scanned all 62 open matches → **618/618 open markets already have predictions**. No new submissions needed. (Prior "657" count was a superset incl. since-settled markets.)
+
+**Movement check (Step 1b)** — imminent matches (next 48h), de-vigged current market vs my submitted; none exceeded 5pp, so no movement-driven updates:
+
+| Match | Market | My prob | Current de-vigged market | Action |
+|---|---|---|---|---|
+| CIV vs ECU | Ivory Coast win | 27 | ~26 (ECU 40/draw 34/CIV 26) | SKIPPED (<5pp) |
+| ESP vs CPV | Spain win | 90 | ~89 (1/10 de-vig) | SKIPPED |
+| BEL vs EGY | Belgium win | 60 | 61 (Kalshi) | SKIPPED |
+| IRN vs NZ | Iran win | 53 | 53 (Kalshi 54/27/21) | SKIPPED |
+| IRN vs NZ | 2 or fewer goals | 60 | 61 (over 2.5 = 39%) | SKIPPED |
+| KSA vs URU | Saudi Arabia win | 12 | ~12 (URU heavy fav) | SKIPPED |
+| SWE vs TUN | Sweden win | 51 | no sharp shift found | SKIPPED |
+
+**Bias-driven updates (Step 4)** — offside category already corrected to 47 avg by prior sessions; trimmed the 3 highest remaining outliers (all possession-dominant favorites, no sharp anchor, matching the GER 73→NO failure mode):
+
+| Match | Question | Source | Old | Submitted | Action |
+|---|---|---|---|---|---|
+| ESP vs KSA | Will Spain be caught offside 2 or more times? | base rate + offside bias corr | 63 | 55 | UPDATED |
+| POR vs UZB | Will Portugal be caught offside 2 or more times? | base rate + offside bias corr | 60 | 54 | UPDATED |
+| IRQ vs NOR | Will Norway be caught offside 2 or more times? | base rate + offside bias corr | 60 | 54 | UPDATED |
+
+All other 615 open markets: SKIPPED (already submitted, calibrated, no >5pp move).
