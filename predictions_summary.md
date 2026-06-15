@@ -1116,3 +1116,23 @@ Coverage check: **657/657 open markets carry a prediction** (computed: 63 matche
 | IRQ vs NOR | Will Norway be caught offside 2 or more times? | base rate + offside bias corr | 60 | 54 | UPDATED |
 
 All other 615 open markets: SKIPPED (already submitted, calibrated, no >5pp move).
+
+---
+
+# Session 8 — 2026-06-15
+
+**Step 1 (bias recheck, now 98 settled results).** Back-calculated each outcome from its Brier score. The one persistent, large, directional bias remains **"caught offside 2+ times"**: across 8 settled offside markets (GER 73, NED 51, CIV 46, AUS 45, Curaçao 37, USA 54, BRA 58, SUI 66) only **1 hit (USA) — 12.5% actual vs ~54% avg submitted.** Overconfident by ~40pp. All other categories (match winner, totals, fouls, cards, SOT comparisons, BTTS) show mixed outcomes with no consistent directional error — well calibrated. Offside correction from Sessions 5–7 stands; no new category bias to add.
+
+**Step 1b / Step 4 (movement check on imminent slate).** All four matches kicking off today (2026-06-15) confirmed against current Pinnacle + Kalshi de-vigged prices. **No market moved >5pp from my submission — zero updates.**
+
+| Match | Question | My prob | Current de-vigged market | Source | Action |
+|---|---|---|---|---|---|
+| ESP vs CPV | Spain win | 90 | ~89 (Pinnacle ESP 1.078 / CPV 28.26) | Pinnacle | SKIPPED (<1pp) |
+| BEL vs EGY | Belgium win | 60 | 60 (Kalshi 61/24/17) | Kalshi | SKIPPED (exact) |
+| KSA vs URU | Saudi Arabia win | 12 | 12 (Kalshi 12/21/68) | Kalshi | SKIPPED (exact) |
+| IRN vs NZ | Iran win | 53 | 53 (Kalshi 54/27/21) | Kalshi | SKIPPED (exact) |
+| IRN vs NZ | 2 or fewer total goals | 60 | 61 (O2.5 ≈ 39%) | FanDuel/bet365 | SKIPPED (<2pp) |
+
+**Steps 2–3, 5 (coverage).** Discovered 60 matches with open markets in the Probability Cup lobby (57×10 + 3×9 = **597 open markets**). Cross-referenced every open market_id against my 597 open predictions: **597/597 covered, 0 uncovered.** No new submissions required.
+
+**Result:** Goal satisfied — every open market has a submitted, calibrated prediction. Offside bias correction intact; imminent slate verified flat vs sharp markets.
