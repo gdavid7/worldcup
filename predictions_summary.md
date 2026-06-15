@@ -1136,3 +1136,25 @@ All other 615 open markets: SKIPPED (already submitted, calibrated, no >5pp move
 **Steps 2–3, 5 (coverage).** Discovered 60 matches with open markets in the Probability Cup lobby (57×10 + 3×9 = **597 open markets**). Cross-referenced every open market_id against my 597 open predictions: **597/597 covered, 0 uncovered.** No new submissions required.
 
 **Result:** Goal satisfied — every open market has a submitted, calibrated prediction. Offside bias correction intact; imminent slate verified flat vs sharp markets.
+
+---
+
+# Session 9 — 2026-06-15 — Offside re-shade (data-driven calibration fix)
+
+**Trigger.** Calibration review of all 98 settled predictions, plus an independent statistical agent (cold-start, raw Brier data only). Both converged on a single statistically defensible bias: **"caught offside 2 or more times" is badly over-predicted.**
+
+**Evidence.**
+- Settled offside markets: n=8, mean submitted prob **53.8%**, actual hit rate **12.5%** (1/8). Gap **+41pp**.
+- Exact Poisson-binomial two-sided **p = 0.025** (unadjusted); Bonferroni-adjusted across 9 categories p ≈ 0.22 — so "suggestive, large, one-directional, mechanistically plausible," treated as actionable.
+- Every other category (cards, fouls, totals, match winner, corners, player-to-score) was within noise at current n — **left untouched** to avoid overfitting (agent explicitly cautioned against tuning cards, which I had earlier flagged; deferred to the stricter test).
+- Overall book is at base-rate Brier (0.243 ≈ always-base-rate 0.243); real ceiling is discrimination (AUC 0.59), not calibration.
+
+**Action.** Re-shaded **all 51 open "caught offside 2+" markets to 24** (was 37–55, mean ~48). Flat re-base, **deliberately not tilted by team strength** — the biggest historical miss was a dominant favorite (Germany 73 → NO), so favoredness carries no reliable offside signal. Target 24 chosen as a Bayesian blend: empirical 12.5% shrunk toward the real-world ~40% per-team base rate (posterior ≈ 0.24), respecting the signal without overfitting 8 games.
+
+**Expected impact.** ~0.009 lower overall Brier (~3.7% of total) if the realized offside rate holds; downside is small if the true rate is higher, since 24 is still below the real-world base rate. To be re-validated as more offside markets settle.
+
+| Market type | Count | Old range (mean) | New | Action |
+|---|---|---|---|---|
+| Will [team] be caught offside 2 or more times? | 51 open | 37–55 (~48) | 24 | UPDATED |
+
+All other open markets unchanged. Coverage remains 597/597.
