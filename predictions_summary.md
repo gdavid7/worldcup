@@ -1158,3 +1158,50 @@ All other 615 open markets: SKIPPED (already submitted, calibrated, no >5pp move
 | Will [team] be caught offside 2 or more times? | 51 open | 37–55 (~48) | 24 | UPDATED |
 
 All other open markets unchanged. Coverage remains 597/597.
+
+---
+
+# Session 10 — 2026-06-16 — Player-prop overprediction correction (data-driven)
+
+**Step 1 — bias recheck, now 138 settled results (was 98).** Back-calculated each outcome from its Brier score and re-bucketed by question type. Two findings:
+
+- **Offside 2+ — CONFIRMED calibrated.** n=12 settled, hit rate **25.0%** vs the Session-9 re-shade of **24**. Spot-on; the four markets I'd re-priced to 24 split 2 YES / 2 NO. No change.
+- **NEW, strong signal — player "at least 1 shot on target" is badly over-predicted.** Cleanly classified (excluding "both teams" and team-name subjects like *Haiti*):
+  - Full-match player SOT: n=12 settled, avg submitted **50**, hit **16.7%** (2/12). Gap **+33pp**.
+  - 2nd-half player SOT: n=3, avg 24, hit 0/3.
+  - Pooled player SOT: n=15, avg 45, hit **13.3%**. Binomial vs p=0.45 highly significant.
+  - Player **"score or assist"**: n=6, avg 33, hit **16.7%**; player **"score a goal"**: n=2, hit 0%. Same over-prediction direction.
+- All other categories (match win, totals, fouls, corners, team-SOT comparison, cards, BTTS, halftime) remained within noise at current n — **left untouched** (avoiding overfit, consistent with prior sessions). Mechanistically: a single named player records a SOT far less often than ~50%, and even my high-priced picks (McTominay, Afif, Džeko all NO) missed — poor discrimination plus a large level error.
+
+**Step 4 — correction applied.** Re-shaded all open player offensive props with role-aware Bayesian centers (empirical hit shrunk toward a population prior; mild discrimination slope retained for genuine stars):
+- Full-match player SOT: `new = 27 + 0.45·(old−50)`, clamp [12,48] → **50 markets, mean 50.5 → 27.3**
+- 2nd-half player SOT: `new = 16 + 0.35·(old−41)`, clamp [8,33] → **11 markets, mean 39.3 → 15.5**
+- score/assist: `new = 22 + 0.40·(old−33)`, clamp [10,40] → **13 markets, mean 37.4 → 23.7**
+- score-goal: `new = 17 + 0.45·(old−24)`, clamp [8,36] → **5 markets, mean 31.4 → 20.4**
+
+**79 predictions updated** (all moves ≥5pp). Both-teams-SOT markets (n=4 settled, 75% hit at avg 69 — well calibrated) and the *Haiti* team-SOT market were explicitly **excluded** from the re-shade.
+
+**Step 1b — imminent slate (kickoffs today 2026-06-16).** Verified vs current sharp prices; **no >5pp move, zero forced updates** (player props on these matches were caught by the recalibration above):
+
+| Match | Question | My prob | Sharp de-vigged | Source | Action |
+|---|---|---|---|---|---|
+| FRA vs SEN | France win | 66 | ~65 (Bet365 −225 / +350 / +550) | Bet365 | SKIPPED (~1pp) |
+| FRA vs SEN | France more SOT 2H | 73 | consistent (heavy favorite) | — | SKIPPED |
+| FRA vs SEN | Sadio Mané score a goal | 16* | low (away underdog scorer) | base+bias | UPDATED (22→16, score-goal corr) |
+| IRQ vs NOR | 3+ total goals | 60 | ~55 (Norway O2.5 juiced, Haaland −235 to score) | Bet365 | SKIPPED (<5pp) |
+| IRQ vs NOR | Norway score 2H | 75 | ~70 | derived | SKIPPED (<5pp) |
+| IRQ vs NOR | Iraq score 1+ goal | 40 | ~42 | derived | SKIPPED |
+| IRQ vs NOR | Mohanad Ali score/assist | 19* | low | base+bias | UPDATED (26→19, score/assist corr) |
+
+**Steps 2–3, 5 — coverage.** Full open-market diff: **557 open markets, 557 covered, 0 uncovered.** No new submissions required this session (slate shrank from 597; no new uncovered markets opened).
+
+**Result:** Goal satisfied — every open market has a calibrated submission. New player-prop overprediction bias corrected across 79 markets; offside correction confirmed accurate; imminent slate flat vs sharp books.
+
+| Market type | Count | Old mean | New mean | Action |
+|---|---|---|---|---|
+| Player full-match "1+ shot on target" | 50 | 50.5 | 27.3 | UPDATED |
+| Player 2nd-half "1+ shot on target" | 11 | 39.3 | 15.5 | UPDATED |
+| Player "score or assist" | 13 | 37.4 | 23.7 | UPDATED |
+| Player "score a goal" | 5 | 31.4 | 20.4 | UPDATED |
+| Offside 2+ (confirmed at 24) | 47 | 24 | 24 | SKIPPED |
+| All other open markets | 431 | — | — | SKIPPED (calibrated, no move) |
