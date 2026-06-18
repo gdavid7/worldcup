@@ -1205,3 +1205,39 @@ All other open markets unchanged. Coverage remains 597/597.
 | Player "score a goal" | 5 | 31.4 | 20.4 | UPDATED |
 | Offside 2+ (confirmed at 24) | 47 | 24 | 24 | SKIPPED |
 | All other open markets | 431 | — | — | SKIPPED (calibrated, no move) |
+
+---
+
+## Session 11 — 2026-06-18 (coverage reconfirm + imminent-slate sharp check)
+
+**Step 1 — bias recheck on 218 settled results.** Recovered outcomes from Brier scores and re-binned by question type. Systematic **prop overprediction persists** (avg submitted 45.5 vs hit rate 38.1, +7.5pp overall), concentrated in event/player props; match-win (−0.3) and totals (−0.7) remain well calibrated:
+
+| Category | n | avg submitted | hit rate | error (over) |
+|---|---|---|---|---|
+| red card | 9 | 36.0 | 11.1 | +24.9 |
+| score-or-assist | 8 | 29.8 | 12.5 | +17.2 |
+| cards | 13 | 54.3 | 38.5 | +15.8 |
+| offside | 19 | 36.5 | 26.3 | +10.2 |
+| SOT | 61 | 48.4 | 39.3 | +9.0 |
+| corners | 13 | 39.2 | 30.8 | +8.4 |
+| first goal | 8 | 31.0 | 25.0 | +6.0 |
+| BTTS | 9 | 37.6 | 33.3 | +4.2 |
+| match win | 18 | 55.3 | 55.6 | -0.3 (good) |
+| totals | 23 | 42.8 | 43.5 | -0.7 (good) |
+
+Confirms prior sessions' prop-shading direction. No fresh systematic miss beyond what Sessions 9–10 already corrected.
+
+**Steps 2–3, 5 — coverage diff.** Enumerated all 48 upcoming matches → 475 open markets via list_markets. Full diff against my 475 existing open predictions: **475 open markets, 475 covered, 0 uncovered.** No new submissions required (every open market across the entire June 18–28 slate is already priced from prior sessions with de-vig + bias corrections).
+
+**Step 1b — imminent slate (4 nearest kickoffs, June 18).** De-vigged current FanDuel/Kalshi lines vs my submissions:
+
+| Match | Question | My prob | Sharp de-vigged | Source | Action |
+|---|---|---|---|---|---|
+| CZE vs RSA | Czechia win | 59 → **55** | 54% (CZE −132 / draw +268 / RSA +363) | FanDuel | **UPDATED** (−4, ~5pp) |
+| SUI vs BIH | Switzerland win | 60 | 61% (SUI −188 / +310 / +506) | FanDuel | SKIPPED (~1pp) |
+| CAN vs QAT | Canada win | 74 | 75% (CAN −360 / +470 / +1000) | FanDuel | SKIPPED (~1pp) |
+| MEX vs KOR | Mexico win | 48 | 46–48% (MEX +105; Kalshi 50/28/26) | FanDuel/Kalshi | SKIPPED (~0pp) |
+
+Other CZE/RSA markets spot-checked (offside 24, Schick SOT 33, Appollis score/assist 21 — all already prop-shaded, consistent with low-scoring moderate-favorite game). No further moves.
+
+**Result:** Goal satisfied — every open market (475/475) has a calibrated submission. One imminent match-win update (CZE 59→55) to align with sharp consensus; all other imminent win/totals lines flat vs market (<2pp). Update confirmed live (CZE/RSA still open ~14 min pre-kickoff).
