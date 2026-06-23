@@ -1,3 +1,133 @@
+# Probability Cup 2026-06-23: bias-recalibration of all open markets
+
+**Session date:** 2026-06-23 (UTC). All 278 open markets across 28 matches (POR vs UZB June 23 → JOR vs ARG June 28) already carried calibrated predictions from the 06-21 session — no NEW submissions were required. This session refreshed the bias table from **413 settled props** (up from 336) and re-priced where the category shift was material (|Δ|≥4). Fresh Pinnacle/ESPN consensus odds were pulled for the four imminent matches (POR/UZB, ENG/GHA, PAN/CRO, COL/COD) and confirmed the stored match-result/totals values to within 1–2 pts (POR win 83 vs devig ~84; ENG win 81 vs ~82; COL win 62 vs ~64; COL under-2.5 58 vs ~58) — so no odds-driven moves, only bias recalibration.
+
+## Step 1 — Refreshed bias table (413 settled props, outcomes derived from Brier)
+| Category | n | Avg sub | Hit rate | Error | New correction |
+|---|---|---|---|---|---|
+| team-to-score (score in/ at least 1) | 28 | 50.3 | 64.3 | −14.0 underconf | **+8** |
+| cards (count/receive) | 27 | 53.7 | 40.7 | +13.0 overconf | **−7** |
+| score-or-assist | 13 | 29.8 | 15.4 | +14.5 overconf | **−8** |
+| player-score (X to score) | 6 | 25.0 | 0.0 | +25 overconf (small n) | **−8** |
+| halftime-tied | 13 | 42.8 | 15.4 | +27 overconf | **−6** |
+| pen-or-red | 20 | 34.0 | 25.0 | +9.0 overconf | **−5** |
+| corners | 27 | 42.1 | 48.1 | −6.0 underconf | **+4** |
+| shots-on-target | 112 | 46.7 | 43.8 | +2.9 | −2 (skipped, < material) |
+| fouls-compare | 34 | 52.2 | 55.9 | −3.7 | +2 (skipped) |
+| match-result | 37 | 56.8 | 56.8 | 0.1 | 0 |
+| totals / BTTS / offsides | — | — | — | ~0 | 0 |
+| **TOTAL** | **413** | **45.0** | **42.6** | **+2.3** | mean Brier 0.231 |
+
+## Method
+For each open market: kept the 06-21 de-vigged anchor, applied the marginal bias correction above additively, clamped [1,99]. Submitted via `update_prediction` (records pre-exist). Only |Δ|≥4 moves were pushed (97 markets) to avoid churning sub-noise. Manual override: **Kubo (JPN) score/assist → 4** (ruled out per prior notes; bias math floored at 1, widened for residual return-chance).
+
+## Result
+- **278 / 278** open markets carry a calibrated prediction (goal condition met).
+- **97 markets re-priced** this session (mean |Δ| ≈ 6.4). Biggest shifts: team-to-score markets shaded up (e.g. Brazil score 2H 72→80, France score 2H 65→73, Belgium score 2H 68→76); card/score-or-assist markets shaded down (e.g. Luis Díaz s/a 50→42, Kane s/a 52→44, 4+ cards 52→45).
+
+## Per-market table (Old = 06-21 value, New = this session)
+| Match | Question | Category | Old | New |
+|---|---|---|---|---|
+| POR vs UZB | Will Gonçalo Ramos score a goal (excluding own goals)? | player-score | 40 | 32 |
+| POR vs UZB | Will a penalty kick be awarded OR a red card be shown? | pen/red | 25 | 20 |
+| ENG vs GHA | Will Harry Kane score or assist a goal (excluding own goals)? | score/assist | 52 | 44 |
+| ENG vs GHA | Will Ghana have 5 or more corner kicks? | corners | 45 | 49 |
+| ENG vs GHA | Will a penalty kick be awarded OR a red card be shown? | pen/red | 25 | 20 |
+| PAN vs CRO | Will Panama score at least 1 goal? | team-to-score | 38 | 46 |
+| PAN vs CRO | Will Croatia score the first goal of the second half? | team-to-score | 40 | 48 |
+| PAN vs CRO | Will there be 9 or more total corner kicks? | corners | 59 | 63 |
+| PAN vs CRO | Will Croatia receive more cards than Panama? | cards | 42 | 35 |
+| COL vs COD | Will a penalty kick be awarded OR a red card be shown in the match? | pen/red | 26 | 21 |
+| COL vs COD | Will Luis Díaz score or assist a goal (excluding own goals)? | score/assist | 50 | 42 |
+| COL vs COD | Will Colombia have 5 or more corner kicks? | corners | 59 | 63 |
+| BIH vs QAT | In the second half, will Bosnia and Herzegovina have more corner kicks than Qatar? | corners | 55 | 59 |
+| BIH vs QAT | Will a penalty kick be awarded OR a red card be shown in the match? | pen/red | 40 | 35 |
+| BIH vs QAT | Will Bosnia and Herzegovina receive more cards than Qatar? | cards | 43 | 36 |
+| SUI vs CAN | Will a penalty kick be awarded in the match? | pen/red | 24 | 19 |
+| SUI vs CAN | Will there be 2 or more total cards shown in the second half? | cards | 52 | 45 |
+| MAR vs Haiti | Will Haiti score in the second half? | team-to-score | 28 | 36 |
+| MAR vs Haiti | Will Morocco score in the first half? | team-to-score | 68 | 76 |
+| MAR vs Haiti | Will Haiti receive more cards than Morocco? | cards | 56 | 49 |
+| MAR vs Haiti | At halftime, will Haiti have more corner kicks than Morocco? | corners | 32 | 36 |
+| MAR vs Haiti | Will a penalty kick be awarded OR a red card be shown? | pen/red | 40 | 35 |
+| SCO vs BRA | Will Brazil finish with more corner kicks than Scotland? | corners | 70 | 74 |
+| SCO vs BRA | Will Brazil score in the first half? | team-to-score | 62 | 70 |
+| SCO vs BRA | Will Scotland score at least 1 goal? | team-to-score | 38 | 46 |
+| SCO vs BRA | Will there be 4 or more total cards shown? | cards | 44 | 37 |
+| SCO vs BRA | Will Brazil score in the second half? | team-to-score | 72 | 80 |
+| CZE vs MEX | Will Mexico finish with more corner kicks than Czechia? | corners | 56 | 60 |
+| CZE vs MEX | Will there be 4 or more total cards shown? | cards | 44 | 37 |
+| CZE vs MEX | Will Czechia score in the second half? | team-to-score | 52 | 60 |
+| RSA vs KOR | At halftime, will the match be tied? | halftime-tied | 40 | 34 |
+| RSA vs KOR | Will South Korea receive at least 1 card in the second half? | cards | 52 | 45 |
+| Curacao vs CIV | Will Ivory Coast have 5 or more corner kicks? | corners | 65 | 69 |
+| Curacao vs CIV | Will Curaçao score at least 1 goal? | team-to-score | 40 | 48 |
+| Curacao vs CIV | Will Ivory Coast score the first goal of the second half? | team-to-score | 42 | 50 |
+| Curacao vs CIV | Will Curaçao receive more cards than Ivory Coast? | cards | 56 | 49 |
+| ECU vs GER | Will Ecuador score at least 1 goal? | team-to-score | 48 | 56 |
+| ECU vs GER | In the second half, will Ecuador have more corner kicks than Germany? | corners | 32 | 36 |
+| ECU vs GER | Will a penalty kick be awarded OR a red card be shown? | pen/red | 38 | 33 |
+| JPN vs SWE | Will a penalty kick be awarded OR a red card be shown? | pen/red | 38 | 33 |
+| JPN vs SWE | Will Sweden have 5 or more corner kicks? | corners | 62 | 66 |
+| JPN vs SWE | Will Takefusa Kubo score or assist a goal (excluding own goals)? | score/assist | 6 | 4 |
+| JPN vs SWE | Will Viktor Gyökeres score a goal (excluding own goals)? | player-score | 38 | 30 |
+| TUN vs NED | Will Netherlands receive more cards than Tunisia? | cards | 38 | 31 |
+| TUN vs NED | Will Cody Gakpo score or assist a goal (excluding own goals)? | score/assist | 45 | 37 |
+| TUN vs NED | Will Tunisia score at least 1 goal? | team-to-score | 35 | 43 |
+| TUN vs NED | At halftime, will the match be tied? | halftime-tied | 42 | 36 |
+| TUN vs NED | Will Tunisia score in the second half? | team-to-score | 30 | 38 |
+| PAR vs AUS | Will there be 4 or more total cards shown? | cards | 52 | 45 |
+| TUR vs USA | Will a penalty kick be awarded OR a red card be shown in the match? | pen/red | 38 | 33 |
+| TUR vs USA | Will Türkiye have 5 or more corner kicks? | corners | 59 | 63 |
+| TUR vs USA | Will Orkun Kökçü score or assist a goal (excluding own goals)? | score/assist | 30 | 22 |
+| TUR vs USA | Will Folarin Balogun score a goal (excluding own goals)? | player-score | 38 | 30 |
+| NOR vs FRA | Will France score in the second half? | team-to-score | 65 | 73 |
+| NOR vs FRA | Will a penalty kick be awarded OR a red card be shown in the match? | pen/red | 38 | 33 |
+| NOR vs FRA | In the second half, will Norway have more corner kicks than France? | corners | 42 | 46 |
+| NOR vs FRA | Will France score in the first half? | team-to-score | 52 | 60 |
+| NOR vs FRA | Will Norway score at least 1 goal? | team-to-score | 58 | 66 |
+| SEN vs IRQ | Will Iraq receive more cards than Senegal? | cards | 56 | 49 |
+| SEN vs IRQ | At halftime, will Iraq have more corner kicks than Senegal? | corners | 38 | 42 |
+| SEN vs IRQ | Will Mohanad Ali score or assist a goal (excluding own goals)? | score/assist | 24 | 16 |
+| CPV vs KSA | Will a penalty kick be awarded in the match? | pen/red | 22 | 17 |
+| CPV vs KSA | Will Saudi Arabia receive more cards than Cape Verde? | cards | 50 | 43 |
+| CPV vs KSA | Will Salem Al-Dawsari score a goal (excluding own goals)? | player-score | 30 | 22 |
+| CPV vs KSA | Will Ryan Mendes score or assist a goal (excluding own goals)? | score/assist | 28 | 20 |
+| CPV vs KSA | Will Cape Verde score in the second half? | team-to-score | 52 | 60 |
+| URU vs ESP | At halftime, will the match be tied? | halftime-tied | 39 | 33 |
+| URU vs ESP | Will Uruguay score at least 1 goal? | team-to-score | 58 | 66 |
+| URU vs ESP | Will there be 4 or more total cards shown? | cards | 52 | 45 |
+| URU vs ESP | Will there be 9 or more total corner kicks in the match? | corners | 62 | 66 |
+| EGY vs IRN | Will there be 4 or more total cards shown? | cards | 52 | 45 |
+| EGY vs IRN | Will Iran finish with more corner kicks than Egypt? | corners | 38 | 42 |
+| New Zealand vs BEL | Will New Zealand score at least 1 goal? | team-to-score | 38 | 46 |
+| New Zealand vs BEL | Will Belgium score in the second half? | team-to-score | 68 | 76 |
+| New Zealand vs BEL | Will New Zealand receive more cards than Belgium? | cards | 52 | 45 |
+| New Zealand vs BEL | Will Belgium receive at least 1 card in the second half? | cards | 39 | 32 |
+| CRO vs GHA | Will a penalty kick be awarded OR a red card be shown in the match? | pen/red | 30 | 25 |
+| CRO vs GHA | Will Croatia score in the second half? | team-to-score | 60 | 68 |
+| CRO vs GHA | Will there be 9 or more total corner kicks? | corners | 62 | 66 |
+| PAN vs ENG | Will a penalty kick be awarded OR a red card be shown? | pen/red | 30 | 25 |
+| PAN vs ENG | Will Panama score at least 1 goal? | team-to-score | 30 | 38 |
+| PAN vs ENG | At halftime, will the match be tied? | halftime-tied | 40 | 34 |
+| PAN vs ENG | Will there be 5 or more total corner kicks in the second half? | corners | 57 | 61 |
+| COD vs UZB | Will Cédric Bakambu score or assist a goal (excluding own goals)? | score/assist | 33 | 25 |
+| COD vs UZB | Will Uzbekistan have 5 or more corner kicks? | corners | 49 | 53 |
+| COD vs UZB | Will a penalty kick be awarded OR a red card be shown? | pen/red | 23 | 18 |
+| COL vs POR | Will there be 5 or more total corner kicks in the second half? | corners | 47 | 51 |
+| COL vs POR | Will Luis Díaz score a goal (excluding own goals)? | player-score | 30 | 22 |
+| COL vs POR | Will a penalty kick be awarded OR a red card be shown? | pen/red | 24 | 19 |
+| ALG vs AUT | Will Austria score the first goal of the second half? | team-to-score | 35 | 43 |
+| ALG vs AUT | Will Austria receive more cards than Algeria? | cards | 42 | 35 |
+| ALG vs AUT | Will there be 9 or more total corner kicks? | corners | 57 | 61 |
+| JOR vs ARG | Will Argentina have at least 1 corner kick in the first half? | corners | 88 | 92 |
+| JOR vs ARG | Will a penalty kick be awarded OR a red card be shown in the match? | pen/red | 26 | 21 |
+| JOR vs ARG | Will Jordan score at least 1 goal? | team-to-score | 28 | 36 |
+| JOR vs ARG | Will Jordan score in the second half? | team-to-score | 22 | 30 |
+| JOR vs ARG | Will Mousa Al-Taamari score or assist a goal (excluding own goals)? | score/assist | 23 | 15 |
+
+---
+
 # Probability Cup 2026-06-21: match-day re-pricing of all 35 open matches
 
 **Session date:** 2026-06-21 (UTC). All 348 open markets across 35 matches (BEL vs IRN → JOR vs ARG, June 21–28) re-priced from fresh Pinnacle/Kalshi/FanDuel consensus odds, de-vigged, with bias corrections from 336 settled results.
