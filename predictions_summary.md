@@ -1,3 +1,52 @@
+# Probability Cup 2026-06-24: coverage audit + fresh-odds re-pricing of imminent matches
+
+**Session date:** 2026-06-24 15:30 UTC. Goal: every open market carries a calibrated, de-vigged, bias-corrected prediction.
+
+## Step 1 — Refreshed bias table (453 settled props, up from 413)
+Outcomes derived from Brier scores. Overall: avg sub 45.0 vs hit 41.9 (mean Brier 0.225), well-calibrated in aggregate.
+
+| Category | n | Avg sub | Hit % | Error | Correction |
+|---|---|---|---|---|---|
+| shots-on-target | 125 | 46.3 | 41.6 | +4.7 | −5 |
+| cards | 48 | 44.7 | 31.2 | +13.5 | −7 |
+| team-to-score | 44 | 44.1 | 54.5 | −10.4 | +8 |
+| offsides | 41 | 37.4 | 34.1 | +3.3 | −3 |
+| match-result | 40 | 58.2 | 57.5 | +0.7 | 0 |
+| fouls-compare | 37 | 52.2 | 56.8 | −4.5 | +4 |
+| totals | 31 | 48.0 | 51.6 | −3.6 | +3 |
+| corners | 30 | 43.8 | 50.0 | −6.2 | +6 |
+| btts | 18 | 33.3 | 27.8 | +5.6 | −5 |
+| score-or-assist | 15 | 31.6 | 13.3 | +18.3 | −8 |
+| halftime-tied | 9 | 41.6 | 11.1 | +30.4 | −6 |
+| player-score | 7 | 26.0 | 0.0 | +26.0 | −8 |
+| **TOTAL** | **453** | **45.0** | **41.9** | **+3.1** | Brier 0.225 |
+
+## Coverage audit
+Enumerated all open markets across the 24 remaining matches (BIH/QAT 06-24 → JOR/ARG 06-28) via `list_markets`. **238 open markets; all 238 already carry a prediction** (full set-diff of market_ids vs my open predictions = empty both ways). The goal condition is structurally met — **zero NEW submissions required**. POR/UZB, ENG/GHA, PAN/CRO, COL/COD have settled since 06-23 and dropped off.
+
+## Method (this session)
+The refreshed bias table is built on essentially the same settled data the 06-21/06-23 sessions already corrected against (only +40 new props). Those corrections are already baked into the stored values, so re-applying them additively would **double-count and hurt calibration**. Therefore this session updated **only on genuine new information**: fresh Pinnacle/Kalshi/ESPN odds for the matches kicking off today (BIH/QAT & SUI/CAN at 19:00 UTC; MAR/Haiti & SCO/BRA at 22:00 UTC). De-vigged each high-information market and updated where it diverged from my stored value.
+
+## Step 3b narratives (imminent matches)
+- **BIH vs QAT** (Group B finale, Seattle): BIH must win to advance, European squad with Džeko/Demirović threat vs an eliminated, leaky Qatar. Heavy favorite (ML −270) but in a low-event game — sharp under-2.5 is favored (−165), implying P(≤2 goals) ≈ 0.52, NOT the 0.35 I had stored.
+- **SUI vs CAN** (Group B decider, Vancouver): winner tops the group. Both arrive in scoring form (CAN 6-0 QAT, SUI 4-1 BIH); market and experts lean over-2.5 + BTTS. SUI slim favorite (CAN +230, draw +210).
+- **MAR vs Haiti** (Group C, Atlanta): Morocco overwhelming (Kalshi 83/12/5) vs eliminated, twice-shutout Haiti. Comfortable, likely high-scoring Morocco win.
+- **SCO vs BRA** (Group C, Miami): Brazil clear favorite (Kalshi 73/18/10) but model/expert lean is a controlled 2-0 under, not a goal-fest → Scotland-to-score shaded down despite the team-to-score underconfidence bias (narrative trumps the marginal bias).
+
+## Updates submitted (6)
+| Match | Question | Source | De-vig | Old | New | Action |
+|---|---|---|---|---|---|---|
+| BIH vs QAT | Will the match have 2 or fewer total goals? | Pinnacle U2.5 −165/−135 | 0.52 | 35 | **52** | UPDATED |
+| BIH vs QAT | Will Bosnia and Herzegovina win the match? | ML −270 / dr / +600 | ~0.64 | 67 | **65** | UPDATED |
+| SUI vs CAN | Will Switzerland win the match? | CAN +230, draw +210, SUI fav | ~0.45 | 41 | **45** | UPDATED |
+| SUI vs CAN | Will both teams score AND 3+ total goals? | over-2.5 + BTTS lean | ~0.45 | 36 | **42** | UPDATED |
+| SCO vs BRA | Will Scotland score at least 1 goal? | BRA 2-0 controlled / under lean | ~0.38 | 46 | **40** | UPDATED |
+| MAR vs Haiti | Will Morocco win the match? | Kalshi 83/12/5 (de-vigged) | 0.83 | 81 | **83** | UPDATED |
+
+All other 232 open markets: **SKIPPED** (already calibrated and bias-corrected from 06-21/06-23 on the same settled data; no new odds signal). Goal condition met: 238/238 open markets carry a prediction.
+
+---
+
 # Probability Cup 2026-06-23: bias-recalibration of all open markets
 
 **Session date:** 2026-06-23 (UTC). All 278 open markets across 28 matches (POR vs UZB June 23 → JOR vs ARG June 28) already carried calibrated predictions from the 06-21 session — no NEW submissions were required. This session refreshed the bias table from **413 settled props** (up from 336) and re-priced where the category shift was material (|Δ|≥4). Fresh Pinnacle/ESPN consensus odds were pulled for the four imminent matches (POR/UZB, ENG/GHA, PAN/CRO, COL/COD) and confirmed the stored match-result/totals values to within 1–2 pts (POR win 83 vs devig ~84; ENG win 81 vs ~82; COL win 62 vs ~64; COL under-2.5 58 vs ~58) — so no odds-driven moves, only bias recalibration.
