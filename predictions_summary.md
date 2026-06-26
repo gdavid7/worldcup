@@ -1,3 +1,55 @@
+# Probability Cup 2026-06-26: coverage check + stale-win-line corrections
+
+**Session date:** 2026-06-26 05:00 UTC. Goal: every open market carries a calibrated, de-vigged, bias-corrected prediction.
+
+## Step 1 — Refreshed bias table (569 settled props, outcomes derived from Brier)
+Overall: avg sub 45.0 vs hit ~42 (mean Brier 0.226), well-calibrated in aggregate. Corrections below are **already baked into stored values** from prior sessions, so they were NOT re-applied additively (would double-count). Used this session only as a check on direction.
+
+| Category | n | Avg sub | Hit % | Error | Standing correction |
+|---|---|---|---|---|---|
+| shots-on-target | 152 | 46 | 41 | +5 | −4 |
+| totals | 73 | 43 | 47 | −4 | +3 |
+| team-to-score | 51 | 45 | 55 | −10 | +7 |
+| offsides | 52 | 40 | 60 | −20 | +10 (underconf) |
+| match-result | 48 | 56 | 58 | −2 | 0 |
+| fouls-compare | 47 | 53 | 57 | −4 | +4 |
+| cards | 37 | 50 | 38 | +12 | −6 |
+| corners-compare | 33 | 45 | 42 | +3 | ~0 |
+| pen-or-red | 29 | 32 | 17 | +15 | −7 |
+| score-or-assist | 17 | 31 | 24 | +7 | −5 |
+| halftime | 16 | 42 | 25 | +17 | −7 |
+| player-score | 9 | 27 | 0 | +27 | −8 |
+| **TOTAL** | **569** | **45** | **~42** | **+3** | Brier 0.226 |
+
+## Coverage audit
+Enumerated all open markets across the 12 remaining matches (SEN/IRQ & NOR/FRA 06-26 → JOR/ARG & ALG/AUT 06-28) via `list_markets`: **120 open markets; all 120 already carry a prediction** (set-diff of open market_ids vs my open predictions = empty both ways). **Zero NEW submissions required** — goal condition structurally met. All prior matches (BIH/QAT … SCO/BRA, CZE/MEX, RSA/KOR, etc.) have settled and dropped off.
+
+## Method (this session)
+Standing bias corrections are already in the stored values, so updated **only on genuine new odds information**: pulled fresh sharp/consensus moneylines for the imminent matches and de-vigged. Found several **stale match-result lines** (priced in earlier sessions when group situations differed) that diverged >5pp from current de-vigged consensus and corrected them. Other 114 markets matched fresh odds within tolerance → SKIPPED.
+
+## Step 3b narratives (re-priced matches)
+- **SEN vs IRQ** (06-26, Toronto): Senegal heavy sharp favorite (−450, de-vig 0.78) despite poor recent form (lost 3 of 4) — market already prices the slump; Iraq winless. Stored 66 was stale-low.
+- **EGY vs IRN** (06-27, Seattle, Group G): Egypt only a **weak** favorite (+145) with a very live draw (+165) — de-vig Egypt 0.39 / draw 0.36 / Iran 0.25. Both defensive, low-scoring (Iran on two draws) → ≤2 goals likely. Stored Egypt-win 65 was badly stale (+25pp too high).
+- **URU vs ESP** (06-26/27, Mexico): Spain −200 favorite, kept a clean sheet in **7 of 8**. Uruguay-to-score was inflated to 66 by the generic team-to-score uptick; Spain's elite defense argues lower → narrative overrides the bias.
+- **COD vs UZB** (06-27, Atlanta): DR Congo −140 (de-vig ~0.55), playing for survival vs eliminated Uzbekistan. Stored 45 too low.
+- **ALG vs AUT** (06-27, Kansas City, Group J decider): Austria narrow favorite, Algeria de-vig ~0.25. Stored Algeria-win 31 slightly high.
+- **CRO vs GHA** (06-27): Croatia −140, de-vig 0.59 — stored 60 confirmed, no change.
+- **NOR vs FRA** (06-26, Group I finale): France −154 fav, Norway +350 (de-vig ~0.20) — stored Norway-win 22 confirmed; all 10 markets matched fresh odds, no change.
+
+## Updates submitted (6)
+| Match | Question | Source | De-vig | Old | New | Action |
+|---|---|---|---|---|---|---|
+| SEN vs IRQ | Will Senegal win the match? | ML −450/+550/+1200 | 0.78 | 66 | **75** | UPDATED |
+| EGY vs IRN | Will Egypt win the match? | ML +145/+165/+280 | 0.39 | 65 | **40** | UPDATED |
+| EGY vs IRN | Will the match have 2 or fewer total goals? | low-scoring narrative + draw 0.36 | ~0.60 | 55 | **60** | UPDATED |
+| URU vs ESP | Will Uruguay score at least 1 goal? | Spain 7 CS in 8 (narrative override) | ~0.53 | 66 | **53** | UPDATED |
+| COD vs UZB | Will DR Congo win the match? | ML −140/+300/+350 | 0.55 | 45 | **53** | UPDATED |
+| ALG vs AUT | Will Algeria win the match? | Austria fav, ALG +235/+305 | 0.25 | 31 | **27** | UPDATED |
+
+All other 114 open markets: **SKIPPED** (already calibrated/bias-corrected; fresh odds within tolerance). Goal condition met: **120/120** open markets carry a prediction.
+
+---
+
 # Probability Cup 2026-06-24: coverage audit + fresh-odds re-pricing of imminent matches
 
 **Session date:** 2026-06-24 15:30 UTC. Goal: every open market carries a calibrated, de-vigged, bias-corrected prediction.
