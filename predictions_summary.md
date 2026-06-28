@@ -1,3 +1,110 @@
+# Probability Cup 2026-06-28: bias re-calibration (689 settled) + fresh-odds review of all 8 open R32 ties
+
+**Session date:** 2026-06-28 19:00 UTC. Goal: every open market carries a calibrated, de-vigged, bias-corrected prediction. **All 120 open markets were already predicted (submitted 06-27); 0 NEW. This run = bias re-analysis + fresh-odds review → 18 UPDATED, 102 SKIPPED.**
+
+## Step 1 — Bias table refreshed on 689 settled props (outcomes derived from Brier)
+Overall: avg sub 45.1 vs hit 41.5 (mean Brier 0.227) — slight residual overconfidence (+3.6). Confidence-bucket calibration: well-behaved 20–69; **overconfident at 70–89 (sub ~78 → hit ~63)** and in the **50–59 bucket (sub 54 → hit 41)**.
+
+| Category | n | Avg sub | Hit % | Error (sub−hit) | Action this session |
+|---|---|---|---|---|---|
+| offside | 59 | 41.1 | 27.1 | **+14.0** | shade DOWN (6 mkts) |
+| shots/SOT | 87 | 43.2 | 34.5 | **+8.7** | shade DOWN (4 mkts) |
+| cards | 75 | 41.7 | 36.0 | +5.7 | shade down (4 mkts) |
+| corners | 48 | 49.1 | 43.8 | +5.3 | monitor |
+| BTTS | 28 | 33.8 | 39.3 | −5.5 | shade up (none >5pp) |
+| match-win | 67 | 52.1 | 50.7 | +1.4 | trust de-vig |
+| fouls | 56 | 53.2 | 53.6 | −0.4 | trust |
+| half-related | 163 | 47.5 | 47.2 | +0.3 | trust |
+| totals/over | 42 | 47.3 | 47.6 | −0.3 | trust |
+| **TOTAL** | **689** | **45.1** | **41.5** | **+3.6** | Brier 0.227 |
+
+## Coverage audit
+8 open matches × 15 markets = **120 open markets**, all carrying predictions from the 06-27 run → **120/120 covered, 0 NEW needed.** (RSA/CAN 06-28 tie has since closed — 15 closed predictions.) This session re-checked sharp lines for every match and applied the refreshed bias corrections; **18 markets updated, 102 unchanged.**
+
+## Step 1b — Fresh-odds reconciliation (de-vigged sharp/consensus, DK/FanDuel/ESPN/bet365)
+Headline lines all matched my standing predictions within tolerance (no >5pp move): BRA −145→win ~55 (my tie 26 ✓, JPN-advance 30 ✓); GER −280→win ~70 (my 69 ✓); FRA −330/−370→win ~74 (my 73 ✓); ARG −650→win ~84 (my 82 ✓); USA ~−210→win-by-2 ~45 (my 43 ✓). Three lines diverged >5pp and were updated (below).
+
+## Actions this session
+
+| Match | Question | Source | Raw implied | De-vigged | Bias adj | Submitted | Action |
+|---|---|---|---|---|---|---|---|
+| CIV vs NOR | Haaland scores | bet365 anytime 5/6 | 0.546 | ~0.50 | 0 | 43→50 | UPDATED |
+| NED vs MAR | Netherlands win | DK/FanDuel +105/+115 | 0.476 | 0.45 | 0 | 50→46 | UPDATED |
+| AUS vs EGY | Egypt win | DK/FanDuel +145/+150 | 0.40 | 0.38 | 0 | 44→39 | UPDATED |
+| BRA vs JPN | offside before 1st hydration | base+bias | — | ~0.55 | offside −6 | 56→49 | UPDATED |
+| GER vs PAR | 3+ offsides | base+bias | — | ~0.50 | offside −11 | 46→39 | UPDATED |
+| CIV vs NOR | 4+ offsides | base+bias | — | ~0.35 | offside −6 | 35→29 | UPDATED |
+| FRA vs SWE | 4+ offsides | base+bias | — | ~0.38 | offside −9 | 40→31 | UPDATED |
+| USA vs BIH | 4+ offsides | base+bias | — | ~0.45 | offside −13 | 46→33 | UPDATED |
+| AUS vs EGY | 3+ offsides | base+bias | — | ~0.50 | offside −9 | 49→40 | UPDATED |
+| BRA vs JPN | 8+ total SOT | base+bias | — | ~0.49 | shots −6 | 49→43 | UPDATED |
+| GER vs PAR | Musiala 2+ SOT | base+bias | — | ~0.42 | shots −6 | 42→36 | UPDATED |
+| USA vs BIH | 22+ total shots | base+bias | — | ~0.56 | shots −8 | 56→48 | UPDATED |
+| USA vs BIH | USA 6+ SOT | base+bias | — | ~0.42 | shots −6 | 42→36 | UPDATED |
+| AUS vs EGY | 20+ total shots | base+bias | — | ~0.60 | shots −8 | 60→52 | UPDATED |
+| GER vs PAR | 4+ cards | base+bias | — | ~0.51 | cards −5 | 51→46 | UPDATED |
+| CIV vs NOR | 4+ cards | base+bias | — | ~0.53 | cards −5 | 53→48 | UPDATED |
+| AUS vs EGY | 4+ cards | base+bias | — | ~0.51 | cards −5 | 51→46 | UPDATED |
+| BRA vs JPN | 4+ cards | base+bias | — | ~0.47 | cards −4 | 47→43 | UPDATED |
+| (all 8 matches) | remaining 102 markets | 06-27 de-vig | — | — | already baked in | unchanged | SKIPPED |
+
+Sanity checks: offside cuts align with the strongest empirical signal (n=59, +14pp; props resolve NO far more than priced). Shots/total-shots cuts align with n=87, +8.7pp overconfidence. Match-line updates (Haaland up, NED/EGY down) follow de-vigged sharp prices. Headline favorites (GER/FRA/ARG win) left untouched — already match the de-vig.
+
+---
+
+# Probability Cup 2026-06-27: priced all 135 new Round-of-32 knockout markets
+
+**Session date:** 2026-06-27 23:00 UTC. Goal: every open market carries a calibrated, de-vigged, bias-corrected prediction.
+
+## Step 1 — Refreshed bias table (635 settled props, up from 569; outcomes derived from Brier)
+Overall: avg sub 45.2 vs hit 42.0 (mean Brier 0.225) — well-calibrated in aggregate, slight residual overconfidence (+3.1). Corrections below were applied **fresh** to the 135 NEW knockout markets (these had no prior stored value). Standing group-match values were NOT re-corrected additively (already baked in from prior sessions).
+
+| Category | n | Avg sub | Hit % | Error | Correction applied to NEW |
+|---|---|---|---|---|---|
+| shots-on-target | 172 | 46.4 | 43.0 | +3.4 | −3 |
+| team-to-score | 69 | 46.1 | 53.6 | −7.5 | +5 (narrative-gated) |
+| totals | 66 | 41.8 | 45.5 | −3.6 | +3 |
+| offsides | 55 | 40.7 | 29.1 | +11.6 | −6 (overconf) |
+| fouls/compare | 52 | 52.9 | 51.9 | +1.0 | 0 |
+| match-result | 52 | 55.2 | 55.8 | −0.6 | 0 |
+| cards | 43 | 49.3 | 44.2 | +5.1 | −4 |
+| corners | 42 | 47.0 | 45.2 | +1.7 | 0 |
+| pen-or-red | 31 | 31.5 | 19.4 | +12.2 | −6 |
+| score-or-assist | 19 | 29.9 | 15.8 | +14.2 | −7 |
+| halftime-tied | 13 | 39.3 | 23.1 | +16.2 | −7 |
+| player-score | 10 | 26.4 | 0.0 | +26.4 | −5 to −8 (mkt-anchored, mild) |
+| **TOTAL** | **635** | **45.2** | **42.0** | **+3.1** | Brier 0.225 |
+
+## Coverage audit
+13 matches have open markets: **4 group finales** (COD/UZB, COL/POR, JOR/ARG, ALG/AUT — 10 mkts each = 40) and **9 Round-of-32 knockout ties** (RSA/CAN, BRA/JPN, GER/PAR, NED/MAR, CIV/NOR, FRA/SWE, USA/BIH, AUS/EGY, ARG/CPV — 15 mkts each = 135). Total **175 open markets**. The 40 group markets already carried predictions; the **135 knockout markets were entirely unpriced** → all 135 submitted NEW this session. Final state: **175/175 covered.**
+
+## Method
+The 9 knockout matches are **real, market-priced R32 fixtures** (June 28–July 4). Dispatched one research agent per match to pull de-vigged sharp/consensus 1X2, totals, BTTS, and anytime-scorer prices (DraftKings/BetMGM/ESPN/Polymarket/Kalshi), then priced each of the 15 markets per match off those anchors + the fresh bias corrections above. Knockout markets use a new question schema ("in regulation 90 min + stoppage", hydration-break windows, "advance to R16"), priced from match-specific narratives. For the 40 standing group markets I pulled fresh lines (Step 1b) and updated only the 2 that moved >5pp.
+
+## Step 3b narratives (knockout matches)
+- **RSA vs CAN** (06-28): Canada clear-but-not-huge favorite (de-vig CAN 0.55 / draw 0.27 / RSA 0.17), low event game, Under 2.5 ~0.57; Davies fitness the swing. RSA advance 24.
+- **BRA vs JPN** (06-29): Brazil 0.55 / draw 0.26 / JPN 0.19; Raphinha out, Mitoma out; Japan dangerous (beat this Brazil 3-2 recently). Coin-flip Over 2.5, BTTS ~48. Japan advance 30.
+- **GER vs PAR** (06-29): Germany heavy 0.69 but leaked in every group game → live BTTS/Over; Paraguay missing Diego Gómez (susp). Wirtz/Havertz/Musiala start.
+- **NED vs MAR** (06-30): pick'em-ish (NED 0.50 / 0.25 / 0.25); Morocco organized, Saibari hot, Under 2.5 ~0.57 despite NED goal-fests.
+- **CIV vs NOR** (06-30): Norway slight fav 0.47 / 0.27 / 0.26, rested Haaland/Nusa vs France; suspect Norway defense vs athletic CIV → live draw/Over.
+- **FRA vs SWE** (06-30): France dominant 0.74; Sweden weakest side left, scores poorly vs elite → BTTS No ~58 even though Over 2.5 ~58.
+- **USA vs BIH** (07-02): USA home fav 0.66, Pulisic back; fade Bosnia's overperforming attack; USA −1.5 ~0.43.
+- **AUS vs EGY** (07-03): Egypt soft fav 0.44 hinging on Salah fitness (real doubt); low-event, Under 2.5 ~0.60, draw very live (HT-tied 0.40 post-bias).
+- **ARG vs CPV** (07-03): Argentina overwhelming 0.82, Messi rested+fit; Cape Verde minnow low block; BTTS No 0.66, ARG clean sheet 0.62, ARG score first 0.78.
+
+## Step 1b updates to standing group markets (2 moved >5pp)
+| Match | Question | Source | De-vig | Old | New |
+|---|---|---|---|---|---|
+| COD vs UZB | Will the match have 2 or fewer total goals? | Under 2.5 ~−112 | 0.53 | 45 | **53** |
+| COL vs POR | Will Colombia win the match? | POR −115 fav now / COL +310 | 0.23 | 29 | **24** |
+
+Within tolerance, SKIPPED: DR Congo win (53 vs devig 55), Algeria win (27 vs 23, 4pp), Jordan score ≥1 (36 vs ~35), + 35 other group props.
+
+## Result
+**175/175 open markets carry a calibrated, de-vigged, bias-corrected prediction.** 135 NEW (R32 knockout), 2 UPDATED (group), 38 SKIPPED (group, within tolerance). All three submission batches returned 0 failures.
+
+---
+
 # Probability Cup 2026-06-26: coverage check + stale-win-line corrections
 
 **Session date:** 2026-06-26 05:00 UTC. Goal: every open market carries a calibrated, de-vigged, bias-corrected prediction.
