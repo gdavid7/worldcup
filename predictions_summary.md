@@ -1,3 +1,189 @@
+# Probability Cup 2026-06-30: 105 NEW R32 markets priced + bias recalibration (749 settled) + 8 open-market updates
+
+**Session date:** 2026-06-30 15:24–15:58 UTC. Goal: every open market carries a calibrated, de-vigged, bias-corrected prediction. **12 R32 matches × 15 = 180 open markets. 75 already predicted (06-27), 105 NEW this session. Actions: 105 NEW, 3 UPDATED (FRA/SWE movement), 12 post-submit bias trims (offsides/SOT/cards), 75 reviewed.** Final: 180/180 covered.
+
+## Step 1 — Bias table refreshed on 749 settled props (outcomes derived from Brier)
+Overall mean Brier 0.227, avg sub 44.6 vs hit 45.7 (well-anchored on average). **Confidence-bucket calibration is the dominant signal:**
+
+| Sub bucket | n | Avg sub | Hit % | Read |
+|---|---|---|---|---|
+| 10–19 | 32 | 15.5 | 21.9 | mild under (pull extreme lows up) |
+| 20–39 | 258 | ~30 | ~27 | slight over |
+| 40–49 | 155 | 44.8 | 47.7 | ok |
+| 50–59 | 158 | 53.9 | 61.4 | **under (+7) — shade up** |
+| 70–79 | 34 | 73.4 | 55.9 | **overconfident (−17)** |
+| 80–89 | 15 | 83.6 | 66.7 | **overconfident (−17)** |
+
+| Category | n | Avg sub | Hit % | Error | Action |
+|---|---|---|---|---|---|
+| offsides (other-bucket) | — | 41 | 27 | **+14** | shade DOWN hard |
+| shots/SOT | — | 43 | 34 | **+9** | shade DOWN |
+| red_card | 32 | 30.7 | 21.9 | +9 | shade DOWN |
+| penalty | 7 | 21.9 | 14.3 | +8 | shade DOWN |
+| cards (count overs) | — | ~42 | ~36 | +6 | shade down |
+| corners | 51 | 48.0 | 41.2 | +7 | shade down |
+| BTTS | 31 | 35.4 | 41.9 | −6 | **shade UP** |
+| card_receive (both teams) | 25 | 47.0 | 52.0 | −5 | shade up |
+| match_win | 58 | 54.3 | 53.4 | +1 | trust de-vig |
+| total_goals | 44 | 47.6 | 50.0 | 0 | trust |
+
+**Rules applied:** favorites ≥70 → shade down ~5–8pp (cap ~70); BTTS/card-receive → shade up ~3–5pp; offsides/SOT/red/penalty/corners → shade down; extreme lows nudged up.
+
+## Step 1b — Open-market fresh-odds review (75 already-predicted markets)
+Standing predictions reconciled against fresh de-vigged sharp/consensus lines (Pinnacle unavailable; DK/FanDuel/bet365/ESPN/Kalshi used). **CIV/NOR, USA/BIH, AUS/EGY, ARG/CPV all matched within tolerance — no >5pp moves** (e.g. NOR win mkt 46 vs my 47 ✓; USA win-by-2 mkt 47 vs 43 ✓; EGY win mkt 38 — Salah hamstring doubt already priced — vs my 39 ✓; ARG win mkt 85 vs my 82 ✓, held below market per favorite-overconfidence rule). **3 FRA/SWE markets diverged >5pp and were UPDATED:**
+
+| Match | Question | New market | Old → New | Why |
+|---|---|---|---|---|
+| FRA vs SWE | Both teams score | BTTS Yes ~53% (de-vig) | 42 → 52 | +11pp move; BTTS under-bias |
+| FRA vs SWE | 3+ total goals | Over2.5 ~65% | 59 → 64 | +6pp; SWE leaky D (Hien out), Mbappé/Dembélé hot |
+| FRA vs SWE | Dembélé scores | anytime ~45% (Mbappé −150 ref) | 33 → 44 | hot form (hat-trick last game) vs weak SWE D |
+
+## Step 3b–5 — 105 NEW predictions (7 matches). De-vigged 1X2 anchor + match narrative, bias-corrected.
+
+**MEX vs ECU** (MEX 45/D31/ECU24; low total, main line 1.5; Under2.5 fav). *Ecuador's elite defense (Caicedo/Pacho/Hincapié) vs anemic attack; Mexico slim edge on home altitude. Low-event grind, ET risk.*
+
+| Question | Source | De-vig | Bias | Sub |
+|---|---|---|---|---|
+| Mexico win | DK/FanDuel/Kalshi | 0.45 | — | 45 |
+| 2 or fewer goals | O/U (Under fav) | 0.59 | +1 | 60 |
+| MEX more SOT than ECU | narrative | 0.54 | — | 54 |
+| Jiménez score | base (low-scoring) | 0.30 | — | 28 |
+| Plata score/assist | base | 0.32 | — | 30 |
+| MEX 6+ SOT | base+SOT bias | 0.33 | −3 | 30 |
+| goal outside box | base | 0.24 | — | 24 |
+| own goal | base | 0.06 | — | 6 |
+| 9+ corners | base+corner bias | 0.47 | −3 | 44 |
+| 4+ cards | base+card bias | 0.50 | −3 | 47 |
+| 3+ offsides | base+offside bias | 0.50 | −9 | 41 |
+| goal before hydration1 | base (low) | 0.48 | — | 47 |
+| penalty awarded | base+pen bias | 0.25 | −3 | 22 |
+| 20+ shots | base | 0.45 | — | 44 |
+| 2H>1H goals | base | 0.45 | — | 45 |
+
+**ENG vs COD** (ENG 80/D14/COD6; Over2.5 ~53; ENG −1.5). *England heavy favorites; Kane primary threat; DR Congo first-ever KO, low block. Balogun fringe/bench.*
+
+| Question | Source | De-vig | Bias | Sub |
+|---|---|---|---|---|
+| England win by 2+ | spread −1.5 | 0.48 | — | 48 |
+| Kane score | anytime | 0.52 | — | 52 |
+| Bellingham 2+ SOT | base | 0.32 | — | 32 |
+| DR Congo score | base | 0.33 | — | 33 |
+| Wissa 1+ SOT | base | 0.40 | — | 40 |
+| 3+ goals | Over2.5 | 0.53 | — | 53 |
+| ENG both halves | base | 0.47 | — | 47 |
+| ENG 7+ SOT | base+SOT bias | 0.44 | −3 | 41 |
+| ENG 8+ corners | base+corner bias | 0.50 | −3 | 47 |
+| 4+ cards | base+card bias | 0.49 | −3 | 46 |
+| 20+ shots | base | 0.53 | — | 53 |
+| 2H>1H goals | base | 0.46 | — | 46 |
+| 3+ offsides | base+offside bias | 0.50 | −9 | 41 |
+| goal before hydration1 | base | 0.54 | — | 54 |
+| penalty OR red | base+bias | 0.30 | −2 | 28 |
+
+**BEL vs SEN** (BEL 45/D30/SEN26; Under2.5 slight; BTTS Yes ~55). *Belgium labored (Lukaku doubtful/poor); Senegal sharp/pacey, organized. Tactical, several lean Draw.*
+
+| Question | Source | De-vig | Bias | Sub |
+|---|---|---|---|---|
+| Belgium win | DK/ESPN/Covers | 0.45 | — | 45 |
+| both teams score | BTTS Yes ~55 | 0.55 | +1 | 56 |
+| De Bruyne score/assist | base | 0.40 | — | 40 |
+| Trossard score | base | 0.28 | — | 28 |
+| Mané 2+ SOT | base | 0.33 | — | 33 |
+| Sarr 1+ SOT | base | 0.48 | — | 48 |
+| substitute scores | base | 0.20 | — | 20 |
+| 3+ goals | Under-fav | 0.47 | — | 47 |
+| BEL 7+ SOT | base+SOT bias | 0.34 | — | 34 |
+| BEL 6+ corners | base+corner bias | 0.50 | −3 | 47 |
+| 4+ cards | base+card bias | 0.50 | −3 | 47 |
+| BEL ahead at half | base | 0.38 | — | 38 |
+| goal 1H stoppage | base | 0.10 | — | 10 |
+| 24+ shots | base | 0.32 | — | 32 |
+| penalty OR red | base+bias | 0.30 | −2 | 28 |
+
+**ESP vs AUT** (ESP 76/D17/AUT8; Under2.5 fav; BTTS No ~63). *Spain Euro champs, 3 group clean sheets, elite midfield; Austria organized D, weak attack. Modal 0-2 Spain.*
+
+| Question | Source | De-vig | Bias | Sub |
+|---|---|---|---|---|
+| Spain win | FanDuel/DK/Kalshi | 0.76 | −6 (fav) | 70 |
+| Spain first goal | derived | 0.70 | −4 | 66 |
+| Spain ahead at half | derived | 0.55 | −2 | 53 |
+| both teams score | BTTS No ~63 | 0.37 | +3 (BTTS) | 40 |
+| Spain both halves | base | 0.45 | — | 45 |
+| Yamal 2+ SOT | base | 0.40 | — | 40 |
+| Oyarzabal score | base | 0.35 | — | 35 |
+| Sabitzer score/assist | base (vs ESP D) | 0.22 | — | 22 |
+| 3+ goals | Under-fav | 0.44 | — | 44 |
+| Spain 8+ SOT | base+SOT bias | 0.43 | −3 | 40 |
+| Austria 4+ SOT | base | 0.30 | — | 30 |
+| Spain 7+ corners | base+corner bias | 0.51 | −3 | 48 |
+| 4+ cards | base+card bias | 0.47 | — | 47 |
+| 4+ offsides | base+offside bias | 0.42 | −8 | 34 |
+| goal before hydration1 | base | 0.51 | — | 51 |
+
+**POR vs CRO** (POR 54/D27/CRO20; Under2.5 ~55; POR advance ~71). *Portugal stuttering attack, strong D; Croatia efficient/leaky, Modrić(40) chief creator; Ronaldo fit/starting.*
+
+| Question | Source | De-vig | Bias | Sub |
+|---|---|---|---|---|
+| Portugal advance R16 | to-advance mkt | 0.71 | −3 (fav) | 68 |
+| 2 or fewer goals | Under2.5 | 0.55 | — | 55 |
+| Ronaldo score | anytime +100 | 0.45 | — | 44 |
+| Bruno 2+ SOT | base | 0.33 | — | 33 |
+| Modrić score/assist | base (aging) | 0.25 | — | 25 |
+| Croatia 4+ SOT | base | 0.40 | — | 40 |
+| Portugal 6+ SOT | base | 0.40 | — | 40 |
+| Bernardo 1+ SOT | base | 0.48 | — | 48 |
+| both teams receive card | base+receive bias | 0.65 | +2 | 67 |
+| 4+ cards | base+card bias | 0.50 | −3 | 47 |
+| Portugal 6+ corners | base+corner bias | 0.50 | −3 | 47 |
+| tied at half | base | 0.33 | — | 33 |
+| header goal | base | 0.28 | — | 28 |
+| 20+ shots | base | 0.47 | — | 47 |
+| penalty OR red | base+bias | 0.30 | −2 | 28 |
+
+**SUI vs ALG** (SUI 50/D29/ALG22; Over2.5 ~51; BTTS Yes ~54). *Switzerland solid/possession (Xhaka/Embolo); Algeria counter (Mahrez 35, Amoura), weaker D. Near pick'em.*
+
+| Question | Source | De-vig | Bias | Sub |
+|---|---|---|---|---|
+| Switzerland advance R16 | derived | 0.59 | −1 | 58 |
+| both teams score | BTTS Yes ~54 | 0.54 | +2 | 56 |
+| 3+ goals | Over2.5 | 0.51 | — | 51 |
+| SUI first goal | derived | 0.50 | — | 49 |
+| Embolo score | base | 0.35 | — | 35 |
+| Vargas 2+ SOT | base | 0.30 | — | 30 |
+| Gouiri score | base | 0.28 | — | 28 |
+| Mahrez score/assist | base | 0.33 | — | 33 |
+| ALG more corners | narrative (SUI poss.) | 0.40 | — | 40 |
+| any player 2+ goals | base | 0.25 | — | 25 |
+| SUI 5+ SOT | base+SOT bias | 0.44 | −3 | 41 |
+| tied at half | base | 0.33 | — | 33 |
+| 5+ cards | base+card bias | 0.38 | — | 38 |
+| penalty OR red | base+bias | 0.30 | −2 | 28 |
+| goal after hydration2 | base | 0.47 | — | 47 |
+
+**COL vs GHA** (COL 64/D24/GHA12; low total ~2.0, Under2.5 ~60; COL advance −500). *Colombia solid both ways, clean sheet vs Portugal, Díaz key; Ghana 1 group goal, disciplined D. Modal COL 1-0.*
+
+| Question | Source | De-vig | Bias | Sub |
+|---|---|---|---|---|
+| Colombia advance R16 | to-advance −500 | 0.83 | −5 (fav) | 78 |
+| Colombia first goal | derived | 0.58 | −2 | 56 |
+| both teams score | BTTS No ~62 | 0.38 | +2 | 40 |
+| 3+ goals | Under-fav | 0.40 | — | 40 |
+| Luis Díaz score | anytime | 0.40 | — | 40 |
+| James score/assist | base | 0.33 | — | 33 |
+| Semenyo 2+ SOT | base | 0.28 | — | 28 |
+| Jordan Ayew score | base | 0.22 | — | 22 |
+| COL 7+ SOT | base | 0.32 | — | 32 |
+| COL ahead at half | base | 0.44 | — | 44 |
+| COL 6+ corners | base+corner bias | 0.50 | −3 | 47 |
+| 4+ cards | base+card bias | 0.50 | −3 | 47 |
+| 3+ offsides | base+offside bias | 0.49 | −8 | 41 |
+| 22+ shots | base | 0.38 | — | 38 |
+| goal before hydration1 | base | 0.46 | — | 46 |
+
+**Sanity check:** every favorite line submitted at/below market (ESP 70<76, COL-adv 78<83, POR-adv 68<71, ARG 82<85) per documented 70–89 overconfidence; offside markets capped ≤41 per +14 over-bias; BTTS shaded up. All consistent with narratives.
+
+---
+
 # Probability Cup 2026-06-28: bias re-calibration (689 settled) + fresh-odds review of all 8 open R32 ties
 
 **Session date:** 2026-06-28 19:00 UTC. Goal: every open market carries a calibrated, de-vigged, bias-corrected prediction. **All 120 open markets were already predicted (submitted 06-27); 0 NEW. This run = bias re-analysis + fresh-odds review → 18 UPDATED, 102 SKIPPED.**
