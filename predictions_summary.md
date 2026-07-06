@@ -2,6 +2,17 @@
 
 **Session date:** 2026-07-06 ~14:07 UTC. Goal: every open market carries a calibrated, de-vigged, bias-corrected prediction. **2 R16 matches × 15 = 30 open markets, ALL NEW.** `list_predictions` returned 929 records, all settled — no open predictions existed to update (Step 1b: nothing to update). Actions: **30 NEW, 0 UPDATED, 0 SKIPPED.**
 
+### Post-submit strategy tune (14:17 UTC) — RBP-percentile review
+R32 recap email: settled 240 forecasts, +458 RBP, but only **37th percentile** ("outperformed 37% of users"). Positive RBP-vs-crowd in 21/24 categories yet below median → beating the crowd *mean* (dragged down by noise bettors) isn't enough; the serious field clusters above the mean. Strategy = **lean into proven-edge categories, hug outcomes (not 50) in weak ones**. Strongest edge: player score-or-assist (+5.4), team corner comparisons (+3.4), penalty+red (+3.2), total goals over (+2.7), halftime tied (+2.6), match winners (+2.5). Weakest: total shots on target (−2.6), offsides (−1.5), total corners (−1.3).
+
+Two edits made (both leaning into the +5.4 score-or-assist category, which I'd de-vigged conservatively):
+| Match | Question | Old | New | Rationale |
+|---|---|---|---|---|
+| POR-ESP | Yamal score or assist | 47 | 50 | strongest edge cat; Spain dominate possession |
+| USA-BEL | De Bruyne score or assist | 43 | 45 | same cat; BEL creator/set-piece taker, may chase game |
+
+Deliberately **not** changed: advance/winner props (anchored to sharp de-vigged line — edge = trust the market, not inflate past it); offsides 33 & total corners 44 (outcome hit-rates + crowd gap both say truth is *below* my old instinct, so the down-shade is already the fix — moving toward 50 would re-break them).
+
 ## Step 1 — Bias table refreshed on 929 settled props (outcomes derived from Brier)
 Overall mean Brier 0.227, avg sub 44 vs hit 45% (well-anchored on average). Confidence-bucket calibration remains the dominant signal:
 
