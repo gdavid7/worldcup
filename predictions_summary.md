@@ -1,3 +1,78 @@
+# Probability Cup 2026-07-06: 30 NEW Round-of-16 markets priced (POR-ESP + USA-BEL) + bias recalibration on 929 settled
+
+**Session date:** 2026-07-06 ~14:07 UTC. Goal: every open market carries a calibrated, de-vigged, bias-corrected prediction. **2 R16 matches × 15 = 30 open markets, ALL NEW.** `list_predictions` returned 929 records, all settled — no open predictions existed to update (Step 1b: nothing to update). Actions: **30 NEW, 0 UPDATED, 0 SKIPPED.**
+
+## Step 1 — Bias table refreshed on 929 settled props (outcomes derived from Brier)
+Overall mean Brier 0.227, avg sub 44 vs hit 45% (well-anchored on average). Confidence-bucket calibration remains the dominant signal:
+
+| Sub bucket | n | Avg sub | Realized % | Read |
+|---|---|---|---|---|
+| 10–19 | 38 | 15 | 21 | mild under (pull extreme lows up) |
+| 20–29 | 138 | 25 | 23 | slight over |
+| 30–39 | 181 | 35 | 32 | slight over |
+| 40–49 | 225 | 45 | 49 | ok, mild under |
+| 50–59 | 183 | 54 | 63 | **under (+9) — shade up** |
+| 60–69 | 95 | 64 | 62 | ok |
+| 70–79 | 39 | 73 | 62 | **overconfident (−11)** |
+| 80–89 | 17 | 83 | 59 | **overconfident (−24)** |
+
+| Category | n | Avg sub | Hit % | Error | Action |
+|---|---|---|---|---|---|
+| OFFSIDE | 70 | 40.9 | 31 | +10 | shade DOWN hard |
+| RED_CARD | 39 | 29.7 | 23 | +7 | shade DOWN |
+| PENALTY | 10 | 22.1 | 10 | +12 | shade DOWN |
+| CORNERS | 65 | 48.7 | 43 | +6 | shade DOWN |
+| CARDS | 50 | 46 | 42 | +4 | shade DOWN |
+| DRAW | 18 | 37.2 | 22 | +15 | shade DOWN (don't over-price draws) |
+| TOTAL_GOALS | 90 | 44.2 | 47 | −3 | nudge UP |
+| MATCH_WINNER | 65 | 54.6 | 54 | ~0 | keep |
+| TEAM_TO_SCORE | 33 | 29.5 | 30 | ~0 | keep |
+
+**Correction rules applied:** (1) pull >70 toward center; (2) shade rare-event props (offside/cards/corners/red/penalty) DOWN 3–8pp; (3) nudge total-goals UP ~2; (4) don't inflate draws.
+
+## Step 3 — Market anchors (de-vigged from FanDuel/ESPN sharp lines)
+- **POR vs ESP** (kickoff 19:00 UTC): Spain −115 / Draw +260 / Portugal +310 → de-vig **Spain 51 / Draw 26 / Portugal 23**. Spain advance −225 → **66%**. Spain only team yet to concede all tournament; Under 2.5 hit in 4 of last 5 meetings. BTTS −135. Ronaldo anytime +185/+200.
+- **USA vs BEL** (kickoff 00:00 UTC 07-07): USA +150 / Draw +240 / Belgium +180 → de-vig **USA 38 / Draw 28 / Belgium 34**. Belgium advance +120 → **~45%**. Both defenses leaky; Balogun reinstated. BTTS −174 (~60% de-vig). Over 2.5 −154 (~57% de-vig). Lukaku +170, Pulisic +210, De Bruyne +270 (score).
+
+## Step 6 — Actions this session
+
+| Match | Question | Source | Raw implied | De-vigged | Bias adj | Submitted | Action |
+|---|---|---|---|---|---|---|---|
+| POR-ESP | Ronaldo to score | FanDuel +185/+200 | 34% | 32 | keep (team-score calib) | 31 | NEW |
+| POR-ESP | Yamal score or assist | Base (top creator) | ~50% | 48 | — | 47 | NEW |
+| POR-ESP | Bruno Fernandes 1+ SOT | Base (key attacker) | ~65% | 62 | −2 | 60 | NEW |
+| POR-ESP | Both halves same # goals | Base rate | ~31% | 31 | low-conf, near center | 31 | NEW |
+| POR-ESP | Portugal score first | Derived from 1X2 | ~34% | 34 | −1 | 33 | NEW |
+| POR-ESP | 3+ total goals | FanDuel O/U 2.5 (Under favored) | ~44% | 44 | +1 goals-up | 45 | NEW |
+| POR-ESP | Diogo Costa 4+ saves | Base (keeper vs Spain) | ~38% | 38 | −1 | 37 | NEW |
+| POR-ESP | Substitute scores | Base rate | ~24% | 24 | — | 24 | NEW |
+| POR-ESP | 4+ total cards | Base (rivalry KO) | ~55% | 55 | −3 cards-down | 52 | NEW |
+| POR-ESP | 9+ total subs | Base (both use 5) | ~65% | 65 | −2 | 63 | NEW |
+| POR-ESP | Spain 6+ corners | Base (Spain possession) | ~48% | 48 | −3 corners-down | 45 | NEW |
+| POR-ESP | Match to extra time | P(draw in reg) | ~26% | 26 | −1 | 25 | NEW |
+| POR-ESP | Any POR player 2+ SOT | Base | ~58% | 58 | −2 | 56 | NEW |
+| POR-ESP | Spain advance to QF | FanDuel −225/+180 | 66% | 66 | keep (60s calib) | 65 | NEW |
+| POR-ESP | First card before first goal | Base rate | ~42% | 42 | — | 42 | NEW |
+| USA-BEL | Pulisic to score | FanDuel +210 | 32% | 30 | keep | 30 | NEW |
+| USA-BEL | De Bruyne score or assist | Base (creator, +270 score) | ~45% | 44 | −1 | 43 | NEW |
+| USA-BEL | Belgium advance to QF | FanDuel +120 | 45% | 45 | keep | 45 | NEW |
+| USA-BEL | Malik Tillman 1+ SOT | Base (att. mid) | ~52% | 52 | −2 | 50 | NEW |
+| USA-BEL | Trossard to score | Base (rotation) | ~24% | 24 | — | 24 | NEW |
+| USA-BEL | Lukaku to score | FanDuel +170 | 37% | 34 | +1 (rested focal) | 35 | NEW |
+| USA-BEL | Both teams to score | FanDuel −174/+136 | 63% | 60 | −1 | 59 | NEW |
+| USA-BEL | Tied at halftime | Base rate | ~40% | 40 | — | 40 | NEW |
+| USA-BEL | 4+ total cards | Base (KO) | ~54% | 54 | −3 cards-down | 51 | NEW |
+| USA-BEL | USA more SOT than BEL | Base (~coinflip) | ~48% | 48 | — | 48 | NEW |
+| USA-BEL | Pulisic plays entire match | Base | ~55% | 55 | — | 55 | NEW |
+| USA-BEL | Goal in each half | Base (Over-linked) | ~44% | 44 | — | 44 | NEW |
+| USA-BEL | 3+ total goals | FanDuel O/U 2.5 −154 | ~58% | 58 | −1 | 57 | NEW |
+| USA-BEL | 10+ total corners | Base rate | ~46% | 46 | −2 corners-down | 44 | NEW |
+| USA-BEL | 4+ offside calls | Base rate | ~40% | 40 | −7 offside-down | 33 | NEW |
+
+**Final: 30/30 open markets covered. 0 open predictions remained un-updated (none pre-existed).**
+
+---
+
 # Probability Cup 2026-06-30: 105 NEW R32 markets priced + bias recalibration (749 settled) + 8 open-market updates
 
 **Session date:** 2026-06-30 15:24–15:58 UTC. Goal: every open market carries a calibrated, de-vigged, bias-corrected prediction. **12 R32 matches × 15 = 180 open markets. 75 already predicted (06-27), 105 NEW this session. Actions: 105 NEW, 3 UPDATED (FRA/SWE movement), 12 post-submit bias trims (offsides/SOT/cards), 75 reviewed.** Final: 180/180 covered.
